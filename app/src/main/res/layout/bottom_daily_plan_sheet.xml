@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="10dp"
@@ -7,17 +8,20 @@
     android:orientation="vertical">
 
 
-        <EditText
-            android:id="@+id/yourPlan_id"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:background="@drawable/box_for_green"
-            android:hint="Title..."
-            android:padding="15dp"
-            android:textColorHint="#cbcbcb"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+    <EditText
+        android:id="@+id/yourPlan_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:autofillHints=""
+        android:background="@drawable/box_for_green"
+        android:hint="@string/title"
+        android:inputType="text"
+        android:padding="15dp"
+        android:textColorHint="#cbcbcb"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        tools:ignore="VisualLintTextFieldSize,TextContrastCheck" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -27,24 +31,28 @@
             android:layout_gravity="start">
 
             <EditText
-                android:background="@drawable/box_for_green"
                 android:id="@+id/planDescription_id"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:autofillHints="name"
+                android:background="@drawable/box_for_green"
+                android:hint="@string/description"
+                android:inputType="text"
+                android:minHeight="48dp"
                 android:padding="10dp"
-                android:hint="Description..."
                 android:textAlignment="textStart"
-                android:textColorHint="#cbcbcb" />
+                android:textColorHint="#cbcbcb"
+                tools:ignore="VisualLintTextFieldSize,TextContrastCheck" />
         </LinearLayout>
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:layout_marginTop="10dp"
-            android:id="@+id/submitButton_id"
-            android:layout_width="150dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:background="#03A9F4"
-            android:text="Create Plan"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/submitButton_id"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:background="#03A9F4"
+        android:text="@string/create_plan"
 
-            />
+        tools:ignore="TextContrastCheck" />
 </LinearLayout>
