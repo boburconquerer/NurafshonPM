@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
 
         initViews()
     }
-
+// ururgutgruegtuyer
     private fun initViews() {
         onClicked()
         fragmentData()
