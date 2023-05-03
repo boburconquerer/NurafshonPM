@@ -7,8 +7,8 @@
     tools:context=".Activities.activities.activity.HomePage.fragments.RatingPageFragment">
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewRating"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/recyclerViewRating"/>
+        android:layout_height="match_parent" />
 
 </LinearLayout>

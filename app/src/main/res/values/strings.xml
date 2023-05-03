@@ -8,5 +8,13 @@
     <string name="sign_in_from_here">Sign In from here</string>
     <string name="nurafshon_pm">Nurafshon PM</string>
     <string name="grade_5">GRADE 5</string>
-    <string name="teacher">Teacher</string>
+    <string-array name="goal_types">
+        <item>Educational</item>
+        <item>Health Goal</item>
+        <item>Business Goal</item>
+        <item>Fitness</item>
+        <item>Sport Goal</item>
+        <item>Career Goal</item>
+
+    </string-array>
 </resources>
