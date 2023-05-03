@@ -92,7 +92,7 @@
                         android:layout_height="25dp"
                         android:text="Sign Up from here"
                         android:textColor="#2A4079"
-                        android:textSize="16dp"
+                        android:textSize="18sp"
                         android:textStyle="bold"
                         android:id="@+id/SignUpFromHere"/>
 

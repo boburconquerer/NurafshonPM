@@ -8,9 +8,4 @@
     <string name="sign_in_from_here">Sign In from here</string>
     <string name="nurafshon_pm">Nurafshon PM</string>
     <string name="grade_5">GRADE 5</string>
-    <string name="create_plan">Create Plan</string>
-    <string name="description">Description...</string>
-    <string name="title">Title...</string>
-    <string name="create_new_plan">Create new plan</string>
-    <string name="what_are_you_planning_for_today">What are you planning for today?</string>
 </resources>

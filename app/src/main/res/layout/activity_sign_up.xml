@@ -117,7 +117,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/sign_in_from_here"
-                        android:textSize="16sp"
+                        android:textSize="18sp"
                         android:textColor="#2A4079"
                         android:textStyle="bold"
                         android:id="@+id/signInFromHere"

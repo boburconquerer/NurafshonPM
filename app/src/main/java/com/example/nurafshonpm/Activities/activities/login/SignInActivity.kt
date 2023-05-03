@@ -5,10 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.widget.AppCompatButton
-import com.example.nurafshonpm.Activities.activities.activity.HomePage.HomePage
+import com.example.nurafshonpm.Activities.activities.activity.MainActivity
 import com.example.nurafshonpm.Activities.activities.login.SignUpActivity
 import com.example.nurafshonpm.R
-import kotlin.math.sign
 
 //Edit by Paxriddinov
 class SignInActivity : AppCompatActivity() {
@@ -33,7 +32,7 @@ class SignInActivity : AppCompatActivity() {
     private fun initViews() {
         signInButton = findViewById(R.id.signInButton_id)
         signInButton.setOnClickListener {
-            val intent = Intent(this@SignInActivity, HomePage::class.java)
+            val intent = Intent(this@SignInActivity, MainActivity::class.java)
             startActivity(intent)
         }
     }

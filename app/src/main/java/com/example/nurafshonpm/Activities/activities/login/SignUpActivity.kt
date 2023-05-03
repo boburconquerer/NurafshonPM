@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.widget.AppCompatButton
 import com.example.nurafshonpm.Activities.SignInActivity
-import com.example.nurafshonpm.Activities.activities.activity.HomePage.HomePage
+import com.example.nurafshonpm.Activities.activities.activity.MainActivity
 import com.example.nurafshonpm.R
 
 class SignUpActivity : AppCompatActivity() {
@@ -31,7 +31,7 @@ class SignUpActivity : AppCompatActivity() {
     private fun initViews() {
         singUpButton=findViewById(R.id.signUpButton_id)
         singUpButton.setOnClickListener {
-            val intent = Intent(this@SignUpActivity,HomePage::class.java)
+            val intent = Intent(this@SignUpActivity, MainActivity::class.java)
             startActivity(intent)
         }
     }

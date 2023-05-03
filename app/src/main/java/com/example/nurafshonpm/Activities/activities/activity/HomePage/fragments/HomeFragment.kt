@@ -29,7 +29,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun initViews(view: View) {
-        recyclerView = view.findViewById(R.id.recyclerView)
+        recyclerView = view.findViewById(R.id.recyclerViewHomePage)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
         refreshData(data())
