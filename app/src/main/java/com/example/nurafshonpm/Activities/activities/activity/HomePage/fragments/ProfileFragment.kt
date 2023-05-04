@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import com.example.nurafshonpm.Activities.activities.activity.profile.TimeManagementActivity
 import com.example.nurafshonpm.R
+import com.google.android.material.bottomsheet.BottomSheetDialog
 
 class ProfileFragment : Fragment() {
 //hehe
@@ -30,7 +31,40 @@ class ProfileFragment : Fragment() {
         timeManage.setOnClickListener {
             val intent = Intent(requireContext() , TimeManagementActivity::class.java)
             startActivity(intent)
+
+
         }
+
+
+
+
+        administration(view)
+        director(view)
+
+    }
+
+    private fun administration(view: View) {
+
+        var administration = view.findViewById<LinearLayout>(R.id.adminstration)
+
+        administration.setOnClickListener{
+            bottomSheetDialog()
+        }
+    }
+    private fun director(view: View) {
+
+        var director = view.findViewById<LinearLayout>(R.id.director)
+
+        director.setOnClickListener{
+            bottomSheetDialog()
+        }
+    }
+
+    private fun bottomSheetDialog() {
+        val bottomSheet = BottomSheetDialog(requireContext())
+
+        bottomSheet.setContentView(R.layout.bottomsheet_fragment)
+        bottomSheet.show()
 
     }
 }

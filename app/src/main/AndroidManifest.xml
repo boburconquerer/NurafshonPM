@@ -11,6 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar"
         tools:targetApi="31">
+        <activity
+            android:name=".bottom_sheet_rating"
+            android:exported="false" />
         <activity android:name=".Activities.activities.activity.profile.TimeManagementActivity" />
         <activity android:name=".Activities.activities.login.SignUpActivity" />
         <activity android:name=".Activities.SignInActivity" />
