@@ -3,11 +3,9 @@ package com.example.nurafshonpm.Activities.activities.adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.nurafshonpm.Activities.activities.model.Goals
-import com.example.nurafshonpm.Activities.activities.model.ModelRating
+import com.example.nurafshonpm.Activities.activities.modul.Goals
 import com.example.nurafshonpm.R
 
 class GoalAdapter(val goalLists:ArrayList<Goals>):RecyclerView.Adapter<RecyclerView.ViewHolder>() {

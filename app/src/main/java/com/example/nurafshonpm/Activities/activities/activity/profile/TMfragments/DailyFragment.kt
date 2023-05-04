@@ -10,7 +10,7 @@ import androidx.appcompat.widget.AppCompatButton
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.nurafshonpm.Activities.activities.adapters.GoalAdapter
-import com.example.nurafshonpm.Activities.activities.model.Goals
+import com.example.nurafshonpm.Activities.activities.modul.Goals
 import com.example.nurafshonpm.R
 import com.google.android.material.bottomsheet.BottomSheetDialog
 
