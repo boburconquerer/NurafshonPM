@@ -5,7 +5,7 @@ import android.os.Bundle
 import androidx.viewpager.widget.ViewPager
 import com.example.nurafshonpm.Activities.activities.activity.profile.TMfragments.DailyFragment
 import com.example.nurafshonpm.Activities.activities.activity.profile.TMfragments.tasksfragment
-import com.example.nurafshonpm.Activities.activities.adapters.TimeManageAdapter
+import com.example.nurafshonpm.Activities.activities.adapters.TimeManagementAdapter
 import com.example.nurafshonpm.R
 import com.google.android.material.tabs.TabLayout
 
@@ -22,7 +22,7 @@ class TimeManagementActivity : AppCompatActivity() {
     private fun initView() {
         val tabLayout = findViewById<TabLayout>(R.id.timeTbLayout_id)
         val viewPager = findViewById<ViewPager>(R.id.timeViewPager_id)
-        val adapter = TimeManageAdapter(supportFragmentManager)
+        val adapter = TimeManagementAdapter(supportFragmentManager)
         adapter.addFragment(DailyFragment(), "Daily plan")
         adapter.addFragment(tasksfragment(), "Schedule")
 

@@ -1,16 +1,14 @@
 package com.example.nurafshonpm.Activities.activities.activity.HomePage.fragments
 
-import android.icu.lang.UCharacter.VerticalOrientation
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Adapter
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.nurafshonpm.Activities.activities.adapters.AdapterHomePage
-import com.example.nurafshonpm.Activities.activities.model.ModelHomePage
+import com.example.nurafshonpm.Activities.activities.modul.ModelHomePage
 import com.example.nurafshonpm.R
 
 class HomeFragment : Fragment() {

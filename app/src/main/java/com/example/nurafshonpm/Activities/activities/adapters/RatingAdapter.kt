@@ -1,13 +1,11 @@
 package com.example.nurafshonpm.Activities.activities.adapters
 
 import android.view.LayoutInflater
-import android.view.TextureView
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextClock
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.nurafshonpm.Activities.activities.model.ModelRating
+import com.example.nurafshonpm.Activities.activities.modul.ModelRating
 import com.example.nurafshonpm.R
 
 class RatingAdapter(var list: ArrayList<ModelRating>): RecyclerView.Adapter<RecyclerView.ViewHolder>() {

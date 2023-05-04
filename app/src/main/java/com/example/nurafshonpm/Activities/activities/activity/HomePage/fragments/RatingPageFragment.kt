@@ -1,16 +1,14 @@
 package com.example.nurafshonpm.Activities.activities.activity.HomePage.fragments
 
 import android.os.Bundle
-import android.view.Display.Mode
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.constraintlayout.helper.widget.Carousel.Adapter
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.nurafshonpm.Activities.activities.adapters.RatingAdapter
-import com.example.nurafshonpm.Activities.activities.model.ModelRating
+import com.example.nurafshonpm.Activities.activities.modul.ModelRating
 import com.example.nurafshonpm.R
 
 class RatingPageFragment : Fragment() {

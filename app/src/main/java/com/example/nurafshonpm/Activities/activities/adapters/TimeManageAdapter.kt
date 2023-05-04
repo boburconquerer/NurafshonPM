@@ -1,28 +1,35 @@
-@file:Suppress("DEPRECATION")
-
 package com.example.nurafshonpm.Activities.activities.adapters
 
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentStatePagerAdapter
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
+import com.example.nurafshonpm.Activities.activities.modul.Planning
+import com.example.nurafshonpm.R
 
-
-class TimeManageAdapter(fm: FragmentManager): FragmentStatePagerAdapter(fm) {
-    private val fragmentList = ArrayList<Fragment>()
-    private val fragmentTitleList = ArrayList<String>()
-    override fun getCount(): Int {
-        return fragmentList.size
+class TimeManageAdapter(private val planList: ArrayList<Planning>) :
+    RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+        val view =
+            LayoutInflater.from(parent.context).inflate(R.layout.daily_plan_item, parent, false)
+        return PlanViewHolder(view)
     }
 
-    override fun getItem(position: Int):Fragment {
-        return fragmentList[position]
+    override fun getItemCount(): Int {
+        return planList.size
     }
 
-    override fun getPageTitle(position: Int): CharSequence {
-        return fragmentTitleList[position]
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        val plans: Planning = planList[position]
+        if (holder is TimeManageAdapter.PlanViewHolder){
+            holder.planTitle.text = plans.titlePlan
+            holder.planDesc.text = plans.descriptionPlan
+        }
+
     }
-    fun addFragment(fragment: Fragment, title:String){
-        fragmentList.add(fragment)
-        fragmentTitleList.add(title)
+    inner class PlanViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val planTitle: TextView = view.findViewById(R.id.title_id)
+        val planDesc: TextView = view.findViewById(R.id.descPlan_id)
     }
 }

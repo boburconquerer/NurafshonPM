@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.nurafshonpm.Activities.activities.model.ModelHomePage
+import com.example.nurafshonpm.Activities.activities.modul.ModelHomePage
 import com.example.nurafshonpm.R
 
 class AdapterHomePage(val list: ArrayList<ModelHomePage>): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
