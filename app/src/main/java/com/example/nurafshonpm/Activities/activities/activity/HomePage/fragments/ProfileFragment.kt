@@ -47,6 +47,7 @@ class ProfileFragment : Fragment() {
 
         administration(view)
         director(view)
+        teacher(view)
 
     }
 
@@ -66,6 +67,14 @@ class ProfileFragment : Fragment() {
             bottomSheetDialog()
         }
     }
+    private fun teacher(view: View) {
+
+        var teacher = view.findViewById<LinearLayout>(R.id.teacher)
+
+        teacher.setOnClickListener{
+            bottomSheetRating()
+        }
+    }
 
     private fun bottomSheetDialog() {
         val bottomSheet = BottomSheetDialog(requireContext())
@@ -74,8 +83,21 @@ class ProfileFragment : Fragment() {
         bottomSheet.show()
 
 
-        val openEducators = view.findViewById<LinearLayout>(R.id.educators)
-        openEducators.setOnClickListener {
+        val openEducators = view?.findViewById<LinearLayout>(R.id.educators)
+        openEducators?.setOnClickListener {
+            val intent = Intent(requireContext() , EducatorsActivity::class.java)
+            startActivity(intent)
+        }
+    }
+    private fun bottomSheetRating() {
+        val bottomSheet = BottomSheetDialog(requireContext())
+
+        bottomSheet.setContentView(R.layout.activity_bottom_sheet_rating)
+        bottomSheet.show()
+
+
+        val openEducators = view?.findViewById<LinearLayout>(R.id.educators)
+        openEducators?.setOnClickListener {
             val intent = Intent(requireContext() , EducatorsActivity::class.java)
             startActivity(intent)
         }

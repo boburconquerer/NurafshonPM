@@ -17,21 +17,84 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+
             android:orientation="vertical">
 
 
+
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/profileImage"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/logo"
+                app:shapeAppearanceOverlay="@style/circle" />
             <LinearLayout
                 android:layout_width="match_parent"
-                android:gravity="end"
-                android:id="@+id/timeManagement"
-                android:layout_marginEnd="16dp"
-                android:layout_marginTop="5dp"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:layout_marginEnd="10dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            android:text="Username:" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=" Alisher Daminov" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            android:layout_marginStart="60dp"
+                            android:text="Email:" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="alisherdaminov124@gmail.com" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
                 <LinearLayout
                     android:layout_width="70dp"
                     android:layout_height="70dp"
                     android:background="@drawable/shape"
                     android:gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/timeManagement"
                     android:orientation="vertical">
                     <ImageView
                         android:layout_width="24dp"
@@ -47,63 +110,12 @@
                         android:textSize="12sp"
                         android:text="Manage"/>
                     <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textStyle="bold"
-                    android:textSize="12sp"
-                    android:text="Time "/>
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textSize="12sp"
+                        android:text="Time "/>
                 </LinearLayout>
-            </LinearLayout>
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/profileImage"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:adjustViewBounds="true"
-                android:scaleType="centerCrop"
-                android:src="@drawable/logo"
-                app:shapeAppearanceOverlay="@style/circle" />
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center_vertical"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Username:" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=" Alisher Daminov" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Username:" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=" Alisher Daminov" />
-                </LinearLayout>
-
             </LinearLayout>
 
 
@@ -114,13 +126,10 @@
                 android:background="@drawable/corner"
                 android:orientation="vertical">
 
-                <androidx.core.widget.NestedScrollView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:orientation="vertical">
 
                         <LinearLayout
@@ -238,33 +247,7 @@
                                     android:src="@drawable/baseline_chevron_right_24" />
                             </LinearLayout>
 
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="50dp"
-                                android:layout_marginStart="20dp"
-                                android:layout_marginTop="10dp"
-                                android:layout_marginEnd="20dp"
-                                android:id="@+id/technicians"
-                                android:background="@drawable/corner2"
-                                android:orientation="horizontal">
 
-                                <TextView
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="center"
-                                    android:layout_marginStart="20dp"
-                                    android:layout_weight="1"
-                                    android:text="Technicians"
-                                    android:textColor="#3F51B5"
-                                    android:textSize="15dp"
-                                    android:textStyle="bold" />
-
-                                <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="center"
-                                    android:src="@drawable/baseline_chevron_right_24" />
-                            </LinearLayout>
                         </LinearLayout>
 
                         <LinearLayout
@@ -273,61 +256,7 @@
                             android:orientation="vertical">
 
 
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="50dp"
-                                android:layout_marginStart="20dp"
-                                android:layout_marginTop="10dp"
-                                android:id="@+id/nurse"
-                                android:layout_marginEnd="20dp"
-                                android:background="@drawable/corner2"
-                                android:orientation="horizontal">
 
-                                <TextView
-                                    android:layout_width="324dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="center"
-                                    android:layout_marginStart="20dp"
-                                    android:layout_weight="1"
-                                    android:text="Nurse"
-                                    android:textColor="#3F51B5"
-                                    android:textSize="15dp"
-                                    android:textStyle="bold" />
-
-                                <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="center"
-                                    android:src="@drawable/baseline_chevron_right_24" />
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="50dp"
-                                android:layout_marginStart="20dp"
-                                android:layout_marginTop="10dp"
-                                android:layout_marginEnd="20dp"
-                                android:id="@+id/canteen"
-                                android:background="@drawable/corner2"
-                                android:orientation="horizontal">
-
-                                <TextView
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="center"
-                                    android:layout_marginStart="20dp"
-                                    android:layout_weight="1"
-                                    android:text="Canteen"
-                                    android:textColor="#3F51B5"
-                                    android:textSize="15dp"
-                                    android:textStyle="bold" />
-
-                                <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="center"
-                                    android:src="@drawable/baseline_chevron_right_24" />
-                            </LinearLayout>
                         </LinearLayout>
 
                         <LinearLayout
@@ -364,40 +293,12 @@
                                     android:src="@drawable/baseline_chevron_right_24" />
                             </LinearLayout>
 
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="50dp"
-                                android:layout_marginStart="20dp"
-                                android:layout_marginTop="10dp"
-                                android:id="@+id/clenears"
-                                android:layout_marginBottom="60sp"
-                                android:layout_marginEnd="20dp"
-                                android:background="@drawable/corner2"
-                                android:orientation="horizontal">
 
-                                <TextView
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="center"
-                                    android:layout_marginStart="20dp"
-                                    android:layout_weight="1"
-                                    android:text="Clenears"
-                                    android:textColor="#3F51B5"
-                                    android:textSize="15dp"
-                                    android:textStyle="bold" />
-
-                                <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="center"
-                                    android:src="@drawable/baseline_chevron_right_24" />
-                            </LinearLayout>
                         </LinearLayout>
 
                     </LinearLayout>
 
 
-                </androidx.core.widget.NestedScrollView>
 
 
             </LinearLayout>
