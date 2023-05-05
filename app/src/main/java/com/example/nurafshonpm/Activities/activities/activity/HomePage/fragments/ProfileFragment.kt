@@ -55,7 +55,7 @@ class ProfileFragment : Fragment() {
         var administration = view.findViewById<LinearLayout>(R.id.adminstration)
 
         administration.setOnClickListener{
-            bottomSheetDialog()
+            bottomSheetDialog(view)
         }
     }
     private fun director(view: View) {
@@ -63,11 +63,11 @@ class ProfileFragment : Fragment() {
         var director = view.findViewById<LinearLayout>(R.id.director)
 
         director.setOnClickListener{
-            bottomSheetDialog()
+            bottomSheetDialog(view)
         }
     }
 
-    private fun bottomSheetDialog() {
+    private fun bottomSheetDialog(view: View) {
         val bottomSheet = BottomSheetDialog(requireContext())
 
         bottomSheet.setContentView(R.layout.bottomsheet_fragment)

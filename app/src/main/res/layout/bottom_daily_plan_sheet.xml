@@ -45,7 +45,6 @@
             android:textColorHint="#cbcbcb"
             tools:ignore="VisualLintTextFieldSize,TextContrastCheck" />
     </LinearLayout>
-   Do
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/submitButton_id"
