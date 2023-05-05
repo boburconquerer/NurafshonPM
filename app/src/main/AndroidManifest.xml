@@ -16,7 +16,7 @@
             android:name=".Activities.activities.activity.profile.BottomSheetActivity"/>
 
 
-        <activity android:name=".Activities.activities.activity.EducatorsActivity" />
+        <activity android:name=".Activities.activities.activity.profile.EducatorsFragment.EducatorsActivity" />
 
         <activity android:name=".Activities.activities.activity.profile.TimeManagementActivity" />
         <activity android:name=".Activities.activities.login.SignUpActivity" />

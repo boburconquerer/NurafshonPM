@@ -7,7 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
-import com.example.nurafshonpm.Activities.activities.activity.EducatorsActivity
+import com.example.nurafshonpm.Activities.activities.activity.profile.EducatorsFragment.EducatorsActivity
 import com.example.nurafshonpm.Activities.activities.activity.profile.TimeManagementActivity
 import com.example.nurafshonpm.R
 import com.google.android.material.bottomsheet.BottomSheetDialog
