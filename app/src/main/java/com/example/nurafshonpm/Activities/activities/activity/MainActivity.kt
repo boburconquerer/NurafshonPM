@@ -5,10 +5,7 @@ import android.os.Bundle
 import android.view.MenuItem
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
-import com.example.nurafshonpm.Activities.activities.activity.HomePage.fragments.HomeFragment
-import com.example.nurafshonpm.Activities.activities.activity.HomePage.fragments.ProfileFragment
-import com.example.nurafshonpm.Activities.activities.activity.HomePage.fragments.RatingPageFragment
-import com.example.nurafshonpm.Activities.activities.activity.HomePage.fragments.TimeManageFragment
+import com.example.nurafshonpm.Activities.activities.activity.HomePage.fragments.*
 import com.example.nurafshonpm.Activities.activities.fragmentAdapter.FragmentAdapter
 import com.example.nurafshonpm.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -41,11 +38,14 @@ class MainActivity : AppCompatActivity() {
                 R.id.menu_ratingPageFragment_id -> {
                     viewHomeActivity.currentItem= 1
                 }
-                R.id.menu_timeManageFragment_id -> {
+                R.id.menu_EducatorsFragment_id -> {
                     viewHomeActivity.currentItem= 2
                 }
-                R.id.menu_profileFragment_id -> {
+                R.id.menu_timeManageFragment_id -> {
                     viewHomeActivity.currentItem= 3
+                }
+                R.id.menu_profileFragment_id -> {
+                    viewHomeActivity.currentItem= 4
                 }
             }
             true
@@ -79,6 +79,7 @@ class MainActivity : AppCompatActivity() {
         return arrayListOf(
             HomeFragment(),
             RatingPageFragment(),
+            EducatorsFragment(),
             TimeManageFragment(),
             ProfileFragment()
         )
