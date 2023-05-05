@@ -45,7 +45,7 @@
                     android:layout_marginTop="20dp"
                     android:background="@drawable/rounded1"
                     android:drawableStart="@drawable/baseline_person_24"
-                    android:hint="UserName"
+                    android:hint="Full name"
                     android:inputType="textPersonName"
                     android:paddingStart="10dp"
                     android:textColorHint="#A6A4A4"

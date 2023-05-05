@@ -5,10 +5,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.nurafshonpm.Activities.activities.modul.Goals
+import com.example.nurafshonpm.Activities.activities.localDatabase.localDataGoal.GoalData
 import com.example.nurafshonpm.R
 
-class GoalAdapter(val goalLists:ArrayList<Goals>):RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class GoalAdapter(private val goalLists:ArrayList<GoalData>):RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.goal_layout, parent, false)
         return GoalsViewHolder(view)
@@ -19,9 +19,9 @@ class GoalAdapter(val goalLists:ArrayList<Goals>):RecyclerView.Adapter<RecyclerV
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        val model: Goals = goalLists[position]
+        val model: GoalData = goalLists[position]
         if(holder is GoalAdapter.GoalsViewHolder){
-            holder.goal.text = model.goal
+            holder.goal.text = model.goalNames
         }
     }
 
