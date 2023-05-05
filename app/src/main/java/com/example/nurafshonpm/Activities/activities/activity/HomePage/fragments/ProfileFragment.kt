@@ -33,7 +33,11 @@ class ProfileFragment : Fragment() {
         }
         administration(view)
         director(view)
+
+        teacher(view)
+
         educator(view)
+
 
     }
     private fun administration(view: View) {
@@ -52,6 +56,16 @@ class ProfileFragment : Fragment() {
             bottomSheetDialog(view)
         }
     }
+
+    private fun teacher(view: View) {
+
+        var teacher = view.findViewById<LinearLayout>(R.id.teacher)
+
+        teacher.setOnClickListener{
+            bottomSheetRating()
+        }
+    }
+
     private fun educator(view: View) {
             val openEducators = view.findViewById<LinearLayout>(R.id.educators)
             openEducators.setOnClickListener {
@@ -59,11 +73,33 @@ class ProfileFragment : Fragment() {
                 startActivity(intent)
             }
 
+
     }
     private fun bottomSheetDialog(view: View) {
         val bottomSheet = BottomSheetDialog(requireContext())
         bottomSheet.setContentView(R.layout.bottomsheet_fragment)
         bottomSheet.show()
+
+
+
+        val openEducators = view?.findViewById<LinearLayout>(R.id.educators)
+        openEducators?.setOnClickListener {
+            val intent = Intent(requireContext() , EducatorsActivity::class.java)
+            startActivity(intent)
+        }
+    }
+    private fun bottomSheetRating() {
+        val bottomSheet = BottomSheetDialog(requireContext())
+
+        bottomSheet.setContentView(R.layout.activity_bottom_sheet_rating)
+        bottomSheet.show()
+
+
+        val openEducators = view?.findViewById<LinearLayout>(R.id.educators)
+        openEducators?.setOnClickListener {
+            val intent = Intent(requireContext() , EducatorsActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 }
