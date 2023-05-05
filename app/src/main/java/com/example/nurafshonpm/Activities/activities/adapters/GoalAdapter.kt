@@ -1,5 +1,6 @@
 package com.example.nurafshonpm.Activities.activities.adapters
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,7 +9,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.nurafshonpm.Activities.activities.localDatabase.localDataGoal.GoalData
 import com.example.nurafshonpm.R
 
-class GoalAdapter(private val goalLists:ArrayList<GoalData>):RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class GoalAdapter:RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+
+    private val goalLists=ArrayList<GoalData>()
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.goal_layout, parent, false)
         return GoalsViewHolder(view)
@@ -23,6 +27,11 @@ class GoalAdapter(private val goalLists:ArrayList<GoalData>):RecyclerView.Adapte
         if(holder is GoalAdapter.GoalsViewHolder){
             holder.goal.text = model.goalNames
         }
+    }
+    @SuppressLint("NotifyDataSetChanged")
+    fun addGoals(goalData: GoalData){
+        goalLists.add(goalData)
+        notifyDataSetChanged()
     }
 
     inner class GoalsViewHolder(view: View):RecyclerView.ViewHolder(view){
