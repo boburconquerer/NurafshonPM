@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,7 +9,9 @@
     android:padding="10dp"
     tools:context=".Activities.activities.activity.profile.TMfragments.tasksfragment">
 
-
+<androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -116,128 +119,248 @@
             android:orientation="vertical">
 
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/date"
+                android:orientation="vertical">
+
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/date"
-                    android:orientation="vertical">
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="5dp">
 
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginBottom="5dp">
-
-                        <TextView
-                            android:layout_width="130dp"
-                            android:layout_height="30dp"
-                            android:layout_gravity="center"
-                            android:background="@drawable/rectangle_filled"
-                            android:padding="5dp"
-                            android:paddingStart="33dp"
-                            android:text="To Do List"
-                            android:textColor="@color/white"
-                            android:textStyle="bold"
-                            tools:ignore="RtlSymmetry" />
-
-                    </LinearLayout>
-                    <EditText
-                        android:layout_width="360dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:background="@drawable/edit_text_underline"
-                        android:layout_marginBottom="5dp"
-                        android:textColor="@color/black"
-
-                        />
+                    <TextView
+                        android:layout_width="130dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/rectangle_filled"
+                        android:padding="5dp"
+                        android:paddingStart="33dp"
+                        android:text="To Do List"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        tools:ignore="RtlSymmetry" />
 
                 </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/date"
+
+                <EditText
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/edit_text_underline"
+                    android:textColor="@color/black"
+
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_marginTop="10dp"
-                    android:orientation="vertical">
+                android:background="@drawable/date"
+                android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginBottom="5dp">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="5dp">
 
-                        <TextView
-                            android:layout_width="130dp"
-                            android:layout_height="30dp"
-                            android:layout_gravity="center"
-                            android:background="@drawable/rectangle_filled"
-                            android:padding="5dp"
-                            android:paddingStart="48dp"
-                            android:text="Notes"
-                            android:textColor="@color/white"
-                            android:textStyle="bold"
-                            tools:ignore="RtlSymmetry" />
-
-                    </LinearLayout>
-                    <EditText
-                        android:layout_width="360dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:background="@drawable/edit_text_underline"
-                        android:layout_marginBottom="5dp"
-                        android:textColor="@color/black"
-
-                        />
+                    <TextView
+                        android:layout_width="130dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/rectangle_filled"
+                        android:padding="5dp"
+                        android:paddingStart="48dp"
+                        android:text="Notes"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        tools:ignore="RtlSymmetry" />
 
                 </LinearLayout>
 
+                <EditText
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/edit_text_underline"
+                    android:textColor="@color/black"
+
+                    />
+
+            </LinearLayout>
 
 
             <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/date"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_marginTop="10dp"
-                    android:orientation="vertical">
+                android:background="@drawable/date"
+                android:orientation="vertical">
 
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="5dp">
+
+                    <TextView
+                        android:layout_width="130dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/rectangle_filled"
+                        android:padding="5dp"
+                        android:paddingStart="36dp"
+                        android:text="Schedule"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        tools:ignore="RtlSymmetry" />
+
+
+                </LinearLayout>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/task_name_background"
+                    android:gravity="center"
+                    android:hint="Task Name"
+                    android:textColor="@color/black"
+                    android:textColorHint="#3A3A3A"
+                    android:textStyle="bold"
+
+                    tools:ignore="RtlSymmetry" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="40dp"
+                    android:orientation="vertical">
                     <LinearLayout
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginBottom="5dp">
+                        android:layout_marginStart="50dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
 
                         <TextView
-                            android:layout_width="130dp"
-                            android:layout_height="30dp"
-                            android:layout_gravity="center"
-                            android:background="@drawable/rectangle_filled"
-                            android:padding="5dp"
-                            android:paddingStart="36dp"
-                            android:text="Schedule"
-                            android:textColor="@color/white"
-                            android:textStyle="bold"
-                            tools:ignore="RtlSymmetry" />
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:gravity="center"
+                            android:background="@drawable/start_end"
+                            android:padding="10dp"
+                            android:text="START"
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/date"
+                            android:gravity="center_vertical">
+
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="5dp"
+                                android:hint="Date"
+                                android:textColor="@color/black"
+                                android:inputType="date"
+                                android:textColorHint="#cbcbcb" />
+
+                        </LinearLayout>
+
 
                     </LinearLayout>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Start"
-                    android:id="@+id/date"
-                    android:textColor="@color/black"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Start"
-                    android:textColor="@color/black"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="50dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="77dp"
+                            android:layout_height="50dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/end"
+                            android:gravity="center"
+                            android:padding="10dp"
+                            android:paddingStart="10dp"
+                            android:text="END"
+                            android:textColor="@color/black"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/date"
+                            android:gravity="center_vertical">
+
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="5dp"
+                                android:hint="Date"
+                                android:inputType="date"
+                                android:textColor="@color/black"
+                                android:textColorHint="#cbcbcb" />
+
+                        </LinearLayout>
 
 
+                    </LinearLayout>
                 </LinearLayout>
 
 
 
 
+            </LinearLayout>
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+
+            android:layout_marginBottom="10dp"
+            android:layout_marginEnd="80dp"
+            android:layout_marginStart="80dp"
+            >
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="SUBMIT"
+                android:background="#03A9F4"
+                />
+        </LinearLayout>
+
     </LinearLayout>
+
+
+</androidx.core.widget.NestedScrollView>
+
 
 
 </LinearLayout>

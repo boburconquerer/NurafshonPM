@@ -27,16 +27,16 @@ class tasksfragment : Fragment() {
     }
 
     private fun initViews(view:View) {
-        var date = view.findViewById<TextView>(R.id.date)
-        val calendar = Calendar.getInstance()
-
-        val dayOfMonth = calendar.get(Calendar.DAY_OF_MONTH)
-        val month = calendar.get(Calendar.MONTH) + 1
-        val year = calendar.get(Calendar.YEAR)
-
-        val dateStr = "$dayOfMonth/$month/$year"
-        date.text = dateStr
-        Log.d("MyApp", "Bugun: $dateStr")
+//        var date = view.findViewById<TextView>(R.id.date)
+//        val calendar = Calendar.getInstance()
+//
+//        val dayOfMonth = calendar.get(Calendar.DAY_OF_MONTH)
+//        val month = calendar.get(Calendar.MONTH) + 1
+//        val year = calendar.get(Calendar.YEAR)
+//
+//        val dateStr = "$dayOfMonth/$month/$year"
+//        date.text = dateStr
+//        Log.d("MyApp", "Bugun: $dateStr")
 
 
 
