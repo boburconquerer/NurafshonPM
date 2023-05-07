@@ -9,9 +9,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.nurafshonpm.Activities.activities.localDatabase.localDataGoal.GoalData
 import com.example.nurafshonpm.R
 
-class GoalAdapter:RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class GoalAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    private val goalLists=ArrayList<GoalData>()
+    private val goalLists = ArrayList<GoalData>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.goal_layout, parent, false)
@@ -24,17 +24,18 @@ class GoalAdapter:RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val model: GoalData = goalLists[position]
-        if(holder is GoalAdapter.GoalsViewHolder){
+        if (holder is GoalAdapter.GoalsViewHolder) {
             holder.goal.text = model.goalNames
         }
     }
+
     @SuppressLint("NotifyDataSetChanged")
-    fun addGoals(goalData: GoalData){
+    fun addGoals(goalData: GoalData) {
         goalLists.add(goalData)
         notifyDataSetChanged()
     }
 
-    inner class GoalsViewHolder(view: View):RecyclerView.ViewHolder(view){
+    inner class GoalsViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         var goal: TextView = view.findViewById(R.id.goalText_id)
     }
 }

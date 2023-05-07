@@ -1,15 +1,18 @@
 package com.example.nurafshonpm.Activities.activities.adapters
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.nurafshonpm.Activities.activities.localDatabase.localDataGoal.GoalData
+import com.example.nurafshonpm.Activities.activities.localDatabase.localDataGoal.PlanData
 import com.example.nurafshonpm.Activities.activities.modul.Planning
 import com.example.nurafshonpm.R
 
-class TimeManageAdapter(private val planList: ArrayList<Planning>) :
-    RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class TimeManageAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+    private val planList = ArrayList<PlanData>()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val view =
             LayoutInflater.from(parent.context).inflate(R.layout.daily_plan_item, parent, false)
@@ -21,13 +24,19 @@ class TimeManageAdapter(private val planList: ArrayList<Planning>) :
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        val plans: Planning = planList[position]
-        if (holder is TimeManageAdapter.PlanViewHolder){
-            holder.planTitle.text = plans.titlePlan
-            holder.planDesc.text = plans.descriptionPlan
+        val plans: PlanData = planList[position]
+        if (holder is TimeManageAdapter.PlanViewHolder) {
+            holder.planTitle.text = plans.title
+            holder.planDesc.text = plans.description
         }
 
     }
+    @SuppressLint("NotifyDataSetChanged")
+    fun addPlans(planData: PlanData) {
+        planList.add(planData)
+        notifyDataSetChanged()
+    }
+
     inner class PlanViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val planTitle: TextView = view.findViewById(R.id.title_id)
         val planDesc: TextView = view.findViewById(R.id.descPlan_id)

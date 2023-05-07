@@ -5,18 +5,18 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = [GoalData::class], version = 2)
-abstract class AppDatabase : RoomDatabase(){
+@Database(entities = [PlanData::class], version = 2)
+abstract class PlanDatabase : RoomDatabase(){
 
-    abstract fun goalDao(): GoalDao
+    abstract fun planDao(): PlanDao
     companion object{
-        private var INSTANCE: AppDatabase? = null
-        fun getInstance(context: Context): AppDatabase?{
+        private var INSTANCE: PlanDatabase? = null
+        fun getInstance(context: Context): PlanDatabase?{
             if (INSTANCE == null){
                 INSTANCE = Room.databaseBuilder(
                     context.applicationContext,
-                    AppDatabase::class.java,
-                    "Goals"
+                    PlanDatabase::class.java,
+                    "Daily plans"
                 )
                     .allowMainThreadQueries()
                     .fallbackToDestructiveMigration()
