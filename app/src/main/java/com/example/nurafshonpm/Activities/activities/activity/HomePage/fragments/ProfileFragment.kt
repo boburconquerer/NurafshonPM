@@ -82,17 +82,20 @@ class ProfileFragment : Fragment() {
 
 
 
+
         val openEducators = view.findViewById<LinearLayout>(R.id.educators)
         openEducators?.setOnClickListener {
             val intent = Intent(requireContext() , EducatorsFragment::class.java)
             startActivity(intent)
         }
+
     }
     private fun bottomSheetRating() {
         val bottomSheet = BottomSheetDialog(requireContext())
 
         bottomSheet.setContentView(R.layout.activity_bottom_sheet_rating)
         bottomSheet.show()
+
 
 
         val openEducators = view?.findViewById<LinearLayout>(R.id.educators)

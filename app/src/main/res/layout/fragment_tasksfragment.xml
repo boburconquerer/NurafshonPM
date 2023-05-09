@@ -17,6 +17,8 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -259,6 +261,7 @@
                             android:layout_marginStart="20dp"
                             android:layout_marginTop="10dp"
                             android:layout_marginBottom="10dp"
+                            android:id="@+id/textView"
                             android:gravity="center"
                             android:background="@drawable/start_end"
                             android:padding="10dp"
@@ -275,14 +278,23 @@
                             android:background="@drawable/date"
                             android:gravity="center_vertical">
 
-                            <EditText
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_margin="5dp"
-                                android:hint="Date"
-                                android:textColor="@color/black"
-                                android:inputType="date"
-                                android:textColorHint="#cbcbcb" />
+<!--                            <EditText-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="match_parent"-->
+<!--                                android:layout_margin="5dp"-->
+<!--                                android:hint="Date"-->
+<!--                                android:textColor="@color/black"-->
+<!--                                android:inputType="date"-->
+<!--                                android:textColorHint="#cbcbcb" />-->
+                            <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/korsatiladiganJoy"
+                            android:textColor="@color/black"
+                            android:gravity="center"
+                            android:textSize="25dp"
+                            android:textStyle="bold"/>
+
 
                         </LinearLayout>
 
@@ -306,6 +318,7 @@
                             android:gravity="center"
                             android:padding="10dp"
                             android:paddingStart="10dp"
+                            android:id="@+id/textView2"
                             android:text="END"
                             android:textColor="@color/black"
                             android:textSize="18dp"
@@ -318,14 +331,23 @@
                             android:background="@drawable/date"
                             android:gravity="center_vertical">
 
-                            <EditText
+<!--                            <EditText-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="match_parent"-->
+<!--                                android:layout_margin="5dp"-->
+<!--                                android:hint="Date"-->
+<!--                                android:inputType="date"-->
+<!--                                android:textColor="@color/black"-->
+<!--                                android:textColorHint="#cbcbcb" />-->
+
+                            <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_margin="5dp"
-                                android:hint="Date"
-                                android:inputType="date"
+                                android:id="@+id/korsatiladiganJoy2"
                                 android:textColor="@color/black"
-                                android:textColorHint="#cbcbcb" />
+                                android:gravity="center"
+                                android:textSize="25dp"
+                                android:textStyle="bold"/>
 
                         </LinearLayout>
 
@@ -337,6 +359,9 @@
 
 
             </LinearLayout>
+
+
+
         </LinearLayout>
 
         <LinearLayout
@@ -354,7 +379,11 @@
                 android:text="SUBMIT"
                 android:background="#03A9F4"
                 />
+
         </LinearLayout>
+
+
+
 
     </LinearLayout>
 
