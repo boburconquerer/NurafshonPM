@@ -8,15 +8,13 @@ import androidx.room.Query
 
 @Dao
 interface GoalDao {
-    @Query("SELECT * FROM Goals_of_Student")
-    fun getAll():GoalData
+    @Query("SELECT * FROM Goals_of_Student  ORDER BY id DESC")
+    fun getAll():List<GoalData>
 
     @Insert
     fun insert(goalData: GoalData)
 
-    @Delete
-    fun delete(goalData: GoalData)
+    @Query("DELETE FROM Goals_of_Student WHERE id = :id")
+    fun delete(id: Int)
 
-    @Query("DELETE FROM Goals_of_Student")
-    fun deleteAll()
 }

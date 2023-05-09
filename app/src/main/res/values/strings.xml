@@ -8,6 +8,8 @@
     <string name="sign_in_from_here">Sign In from here</string>
     <string name="nurafshon_pm">Nurafshon PM</string>
     <string name="grade_5">GRADE 5</string>
+    <string name="description">Description...</string>
+    <string name="title">Title</string>
     <string-array name="goal_types">
         <item>Educational</item>
         <item>Health Goal</item>
