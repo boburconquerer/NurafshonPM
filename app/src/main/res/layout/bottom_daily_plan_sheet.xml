@@ -16,7 +16,7 @@
         android:layout_marginBottom="10dp"
         android:autofillHints=""
         android:background="@drawable/box_for_green"
-        android:hint="Title"
+        android:hint="@string/title"
         android:inputType="text"
         android:padding="15dp"
         android:textColorHint="#cbcbcb"
@@ -37,7 +37,7 @@
             android:layout_height="wrap_content"
             android:autofillHints="name"
             android:background="@drawable/box_for_green"
-            android:hint="Description..."
+            android:hint="@string/description"
             android:inputType="text"
             android:minHeight="48dp"
             android:padding="10dp"
@@ -46,8 +46,8 @@
             tools:ignore="VisualLintTextFieldSize,TextContrastCheck" />
     </LinearLayout>
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/submitButton_id"
+    <Button
+        android:id="@+id/createPlanButton_id"
         android:layout_width="150dp"
         android:layout_height="50dp"
         android:layout_gravity="center"

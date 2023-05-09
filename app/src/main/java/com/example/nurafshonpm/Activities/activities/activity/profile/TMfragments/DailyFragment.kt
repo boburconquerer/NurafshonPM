@@ -61,7 +61,7 @@ class DailyFragment : Fragment() {
     private fun showBottomSheet() {
         val bottomSheetDialog = BottomSheetDialog(requireContext())
         bottomSheetDialog.setContentView(R.layout.bottom_daily_plan_sheet)
-        val buttonSubmit = bottomSheetDialog.findViewById<AppCompatButton>(R.id.submitButton_id)
+        val buttonSubmit = bottomSheetDialog.findViewById<AppCompatButton>(R.id.createPlanButton_id)
         buttonSubmit?.setOnClickListener {
             bottomSheetDialog.dismiss()
         }

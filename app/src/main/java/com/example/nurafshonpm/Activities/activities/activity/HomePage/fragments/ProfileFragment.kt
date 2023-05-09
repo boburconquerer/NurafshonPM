@@ -82,9 +82,9 @@ class ProfileFragment : Fragment() {
 
 
 
-        val openEducators = view?.findViewById<LinearLayout>(R.id.educators)
+        val openEducators = view.findViewById<LinearLayout>(R.id.educators)
         openEducators?.setOnClickListener {
-            val intent = Intent(requireContext() , EducatorsActivity::class.java)
+            val intent = Intent(requireContext() , EducatorsFragment::class.java)
             startActivity(intent)
         }
     }
@@ -97,7 +97,7 @@ class ProfileFragment : Fragment() {
 
         val openEducators = view?.findViewById<LinearLayout>(R.id.educators)
         openEducators?.setOnClickListener {
-            val intent = Intent(requireContext() , EducatorsActivity::class.java)
+            val intent = Intent(requireContext() , EducatorsFragment::class.java)
             startActivity(intent)
         }
 
