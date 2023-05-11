@@ -10,24 +10,21 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.appcompat.widget.AppCompatButton
-import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.LayoutManager
-import androidx.recyclerview.widget.RecyclerView.VERTICAL
 import com.example.nurafshonpm.Activities.activities.adapters.GoalAdapter
 import com.example.nurafshonpm.Activities.activities.localDatabase.localDataGoal.AppDatabase
 import com.example.nurafshonpm.Activities.activities.localDatabase.localDataGoal.GoalData
-import com.example.nurafshonpm.Activities.activities.modul.Goals
+import com.example.nurafshonpm.Activities.activities.localDatabase.localDataGoal.PlanData
+import com.example.nurafshonpm.Activities.activities.localDatabase.localDataGoal.PlanDatabase
 import com.example.nurafshonpm.R
 import com.google.android.material.bottomsheet.BottomSheetDialog
-import com.google.android.material.imageview.ShapeableImageView
 
 
 class DailyFragment : Fragment() {
-    lateinit var deleteIcon: ImageView
-    lateinit var recyclerView: RecyclerView
-    lateinit var goalAdapter: GoalAdapter
+    private lateinit var deleteIcon: ImageView
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var goalAdapter: GoalAdapter
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -53,6 +50,7 @@ class DailyFragment : Fragment() {
             showBottomSheet()
         }
     }
+
     private fun refreshData(data: ArrayList<GoalData>) {
         goalAdapter = GoalAdapter()
         recyclerView.adapter = goalAdapter
@@ -61,16 +59,25 @@ class DailyFragment : Fragment() {
     private fun showBottomSheet() {
         val bottomSheetDialog = BottomSheetDialog(requireContext())
         bottomSheetDialog.setContentView(R.layout.bottom_daily_plan_sheet)
+        val titleEditTExt: EditText? = bottomSheetDialog.findViewById(R.id.yourPlan_id)
+        val descEditText: EditText? = bottomSheetDialog.findViewById(R.id.planDescription_id)
+
+        val textOfTitle = titleEditTExt?.text.toString().trim()
+        val textOfDesc = descEditText?.text.toString().trim()
+
         val buttonSubmit = bottomSheetDialog.findViewById<AppCompatButton>(R.id.createPlanButton_id)
         buttonSubmit?.setOnClickListener {
             bottomSheetDialog.dismiss()
+            val planData = PlanData(textOfTitle, textOfDesc)
+            PlanDatabase.getInstance(requireContext())?.planDao()?.insert(planData)
+            Toast.makeText(requireContext(), "Plan is saved", Toast.LENGTH_LONG).show()
         }
         bottomSheetDialog.show()
     }
 
     private fun fetchData() {
-        val data =  AppDatabase.getInstance(requireContext())?.goalDao()?.getAll()
-        for (i in 0 until data?.reversed()!!.size){
+        val data = AppDatabase.getInstance(requireContext())?.goalDao()?.getAll()
+        for (i in 0 until data?.reversed()!!.size) {
             val goals = data[i]
             goalAdapter.addGoals(goals)
         }
@@ -88,12 +95,12 @@ class DailyFragment : Fragment() {
             AppDatabase.getInstance(requireContext())?.goalDao()?.insert(goalData)
             Toast.makeText(requireContext(), "Saved", Toast.LENGTH_LONG).show()
         }
-
-
     }
-    private fun deleteData(view: View){
+
+
+    private fun deleteData(view: View) {
         val goalData = GoalData()
-        deleteIcon= view.findViewById(R.id.deleteIcon_id)
+        deleteIcon = view.findViewById(R.id.deleteIcon_id)
         deleteIcon.setOnClickListener {
             goalData.id?.let { it1 ->
                 AppDatabase.getInstance(requireContext())?.goalDao()?.delete(

@@ -6,13 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.nurafshonpm.Activities.activities.localDatabase.localDataGoal.GoalData
 import com.example.nurafshonpm.Activities.activities.localDatabase.localDataGoal.PlanData
-import com.example.nurafshonpm.Activities.activities.modul.Planning
 import com.example.nurafshonpm.R
 
-class TimeManageAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-    private val planList = ArrayList<PlanData>()
+class TimeManageAdapter(private val planList: ArrayList<PlanData>): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val view =
             LayoutInflater.from(parent.context).inflate(R.layout.daily_plan_item, parent, false)
@@ -25,12 +23,13 @@ class TimeManageAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val plans: PlanData = planList[position]
-        if (holder is TimeManageAdapter.PlanViewHolder) {
+        if (holder is PlanViewHolder) {
             holder.planTitle.text = plans.title
             holder.planDesc.text = plans.description
         }
 
     }
+
     @SuppressLint("NotifyDataSetChanged")
     fun addPlans(planData: PlanData) {
         planList.add(planData)

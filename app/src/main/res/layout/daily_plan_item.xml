@@ -22,7 +22,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="15dp"
-                android:text="Designing for emotions"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="30sp"
@@ -35,7 +34,6 @@
                 android:layout_marginTop="10dp"
                 android:paddingStart="20dp"
                 android:paddingEnd="20dp"
-                android:text="Wireframes,ul ux designing and emotion desing Designing for users"
                 android:textColor="#000"
                 android:textSize="19sp"
                 android:textStyle="bold" />
