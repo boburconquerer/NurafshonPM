@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     android:background="@color/white"
     android:orientation="vertical"
-    android:padding = "7dp">
+    android:padding="5dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,29 +14,30 @@
         android:orientation="vertical">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="10dp">
+
             <TextView
                 android:id="@+id/title_id"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="15dp"
+                android:text="njncjnvjcnvjcnjvjjvncv"
                 android:textAlignment="center"
                 android:textColor="@color/black"
-                android:textSize="30sp"
+                android:textSize="22sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/descPlan_id"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:paddingStart="20dp"
-                android:paddingEnd="20dp"
+                android:layout_marginTop="8dp"
+                android:text="njncjnvjcnvjcnjvjjvncv"
                 android:textColor="#000"
-                android:textSize="19sp"
-                android:textStyle="bold" />
+                android:textSize="17sp"
+                android:textStyle="normal" />
 
         </LinearLayout>
 
@@ -44,36 +45,35 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:orientation="horizontal"
-            android:gravity="center_vertical">
+            android:layout_margin="10dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
             <LinearLayout
                 android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
                 <com.google.android.material.imageview.ShapeableImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:adjustViewBounds="true"
-                    app:srcCompat="@drawable/logo"
-                    app:shapeAppearanceOverlay="@style/circle"/>
+                    app:shapeAppearanceOverlay="@style/circle"
+                    app:srcCompat="@drawable/logo" />
 
                 <TextView
-                    android:textStyle="bold"
-                    android:textColor="#FFFFFF"
-                    android:layout_marginStart="7dp"
-                    android:layout_gravity="center_vertical"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="7dp"
                     android:text="Nurafshan PM"
-                    android:textSize="20sp"/>
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
             </LinearLayout>
 
 
-
         </LinearLayout>
-
 
 
     </LinearLayout>
