@@ -8,14 +8,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.milliybank.admin.R
+import com.milliybank.admin.homePage.adapter.PostAdapter
+import com.milliybank.admin.homePage.modul.PostData
 import org.w3c.dom.Text
 
 
 class HomeAdminFragment : Fragment() {
-
-
-    private lateinit var selectedDate: String
+    private lateinit var recyclerView: RecyclerView
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -28,22 +30,23 @@ class HomeAdminFragment : Fragment() {
     }
 
     private fun initViews(view: View) {
-        var textView = view.findViewById<TextView>(R.id.chooseDate_id)
-        var dateView = view.findViewById<TextView>(R.id.dateView_id)
-        val calendar = Calendar.getInstance()
-        val year = calendar.get(Calendar.YEAR)
-        val month = calendar.get(Calendar.MONTH)
-        val day = calendar.get(Calendar.DAY_OF_MONTH)
-        val datePickerDialog = DatePickerDialog(requireContext(), { _, year, month, dayOfMonth ->
+        recyclerView = view.findViewById(R.id.recyclePost_id)
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
-            selectedDate = "$dayOfMonth/${month + 1}/$year"
+        refreshData(data())
 
-            dateView.text = " $selectedDate"
-        }, year, month, day)
-
-        textView.setOnClickListener {
-            datePickerDialog.show()
-        }
     }
 
+    private fun data(): ArrayList<PostData> {
+        val list = ArrayList<PostData>()
+        for (i in 1..10){
+            list.add(PostData("Good title","IT"))
+        }
+        return list
+    }
+
+    private fun refreshData(data: ArrayList<PostData>) {
+        val adapter = PostAdapter(data)
+        recyclerView.adapter = adapter
+    }
 }
