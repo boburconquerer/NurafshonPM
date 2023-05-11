@@ -6,17 +6,12 @@ import androidx.room.PrimaryKey
 
 
 @Entity(tableName = "plan_of_student")
-class PlanData {
+class PlanData
+    (
+    @ColumnInfo(name = "plan_title_of_student") var title: String?,
+    @ColumnInfo(name = "plan_description") var description: String?
+) {
     @PrimaryKey(autoGenerate = true)
     var id:Int? = null
-    @ColumnInfo(name = "plan_title_of_student")
-    var title:String? = null
-    @ColumnInfo(name = "plan_description")
-    var description:String? = null
 
-    constructor()
-    constructor(title:String?, description:String?){
-        this.description = description
-        this.title = title
-    }
 }

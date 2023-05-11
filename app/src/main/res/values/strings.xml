@@ -2,7 +2,7 @@
     <string name="app_name">NurafshonPM</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="homepage">HomePage</string>
+    <string name="homepage">Home</string>
     <string name="create_account">Create account</string>
     <string name="already_have_an_account">Already have an account?</string>
     <string name="sign_in_from_here">Sign In from here</string>
