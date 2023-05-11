@@ -7,9 +7,8 @@ import androidx.room.Query
 @Dao
 interface PlanDao {
     //@Query("SELECT * FROM plan_of_student ORDER BY id DESC")
-    @Query("SELECT * FROM plan_of_student")
-    fun getAll():List<PlanData>
-
+    @Query("SELECT * FROM plan_of_student  ORDER BY id DESC")
+    fun getPlanData():List<PlanData>
     @Insert
     fun insert(planData: PlanData)
 
