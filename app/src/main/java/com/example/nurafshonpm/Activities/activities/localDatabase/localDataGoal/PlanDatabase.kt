@@ -7,7 +7,6 @@ import androidx.room.RoomDatabase
 
 @Database(entities = [PlanData::class], version = 1)
 abstract class PlanDatabase : RoomDatabase(){
-
     abstract fun planDao(): PlanDao
     companion object{
         private var INSTANCE: PlanDatabase? = null
@@ -16,7 +15,7 @@ abstract class PlanDatabase : RoomDatabase(){
                 INSTANCE = Room.databaseBuilder(
                     context.applicationContext,
                     PlanDatabase::class.java,
-                    "Daily plans"
+                    "Daily_plans"
                 )
                     .allowMainThreadQueries()
                     .fallbackToDestructiveMigration()

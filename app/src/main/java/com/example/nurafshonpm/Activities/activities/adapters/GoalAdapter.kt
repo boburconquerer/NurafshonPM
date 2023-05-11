@@ -24,7 +24,7 @@ class GoalAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val model: GoalData = goalLists[position]
-        if (holder is GoalAdapter.GoalsViewHolder) {
+        if (holder is GoalsViewHolder) {
             holder.goal.text = model.goalNames
         }
     }

@@ -9,7 +9,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.nurafshonpm.Activities.activities.localDatabase.localDataGoal.PlanData
 import com.example.nurafshonpm.R
 
-class TimeManageAdapter(private val planList: ArrayList<PlanData>): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class TimeManageAdapter( val planList:ArrayList<PlanData>): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val view =

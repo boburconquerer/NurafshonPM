@@ -59,15 +59,13 @@ class DailyFragment : Fragment() {
     private fun showBottomSheet() {
         val bottomSheetDialog = BottomSheetDialog(requireContext())
         bottomSheetDialog.setContentView(R.layout.bottom_daily_plan_sheet)
-        val titleEditTExt: EditText? = bottomSheetDialog.findViewById(R.id.yourPlan_id)
-        val descEditText: EditText? = bottomSheetDialog.findViewById(R.id.planDescription_id)
-
-        val textOfTitle = titleEditTExt?.text.toString().trim()
-        val textOfDesc = descEditText?.text.toString().trim()
-
         val buttonSubmit = bottomSheetDialog.findViewById<AppCompatButton>(R.id.createPlanButton_id)
         buttonSubmit?.setOnClickListener {
             bottomSheetDialog.dismiss()
+            val titleEditTExt: EditText? = bottomSheetDialog.findViewById(R.id.yourPlan_id)
+            val descEditText: EditText? = bottomSheetDialog.findViewById(R.id.planDescription_id)
+            val textOfTitle = titleEditTExt?.text.toString().trim()
+            val textOfDesc = descEditText?.text.toString().trim()
             val planData = PlanData(textOfTitle, textOfDesc)
             PlanDatabase.getInstance(requireContext())?.planDao()?.insert(planData)
             Toast.makeText(requireContext(), "Plan is saved", Toast.LENGTH_LONG).show()
@@ -89,8 +87,7 @@ class DailyFragment : Fragment() {
         submitButton.setOnClickListener {
             val goalEditText: EditText = view.findViewById(R.id.goalField_id)
             val textOfGoal = goalEditText.text.toString().trim()
-            val goalData = GoalData()
-            goalData.goalNames = textOfGoal
+            val goalData = GoalData(textOfGoal)
             goalAdapter.addGoals(goalData)
             AppDatabase.getInstance(requireContext())?.goalDao()?.insert(goalData)
             Toast.makeText(requireContext(), "Saved", Toast.LENGTH_LONG).show()
