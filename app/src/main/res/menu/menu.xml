@@ -12,11 +12,11 @@
         android:icon="@drawable/baseline_star_rate_24"/>
     <item
         android:id="@+id/menu_EducatorsFragment_id"
-        android:title="Educators"
+        android:title="Educator"
         android:icon="@drawable/baseline_pending_actions_24"/>
     <item
         android:id="@+id/menu_timeManageFragment_id"
-        android:title="Time Manager"
+        android:title="Manager"
         android:icon="@drawable/baseline_view_timeline_24"/>
     <item
         android:id="@+id/menu_profileFragment_id"
