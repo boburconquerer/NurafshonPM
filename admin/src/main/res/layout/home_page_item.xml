@@ -20,7 +20,7 @@
             android:layout_margin="10dp"
             android:text="02.02.2023"
             android:textColor="#1E1E1E"
-            android:textSize="18dp" />
+            android:textSize="18sp" />
 
     </LinearLayout>
 
