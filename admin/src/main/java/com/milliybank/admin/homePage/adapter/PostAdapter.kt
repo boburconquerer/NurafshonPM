@@ -28,7 +28,7 @@ class PostAdapter(var postList: ArrayList<PostData>) :
     }
 
     inner class OnPostViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val newTitle = view.findViewById<TextView>(R.id.newItemTitle_id)
-        val newDesc = view.findViewById<TextView>(R.id.newTitleDesc_id)
+        val newTitle: TextView = view.findViewById(R.id.newItemTitle_id)
+        val newDesc:TextView = view.findViewById(R.id.newTitleDesc_id)
     }
 }
