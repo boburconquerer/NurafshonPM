@@ -6,10 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
-import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.appcompat.widget.AppCompatButton
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.nurafshonpm.Activities.activities.adapters.GoalAdapter
@@ -19,12 +19,14 @@ import com.example.nurafshonpm.Activities.activities.localDatabase.localDataGoal
 import com.example.nurafshonpm.Activities.activities.localDatabase.localDataGoal.PlanDatabase
 import com.example.nurafshonpm.R
 import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.google.android.material.imageview.ShapeableImageView
+import com.google.android.material.snackbar.Snackbar
 
 
 class DailyFragment : Fragment() {
-    private lateinit var deleteIcon: ImageView
     private lateinit var recyclerView: RecyclerView
     private lateinit var goalAdapter: GoalAdapter
+    private lateinit var goalList: ArrayList<GoalData>
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -37,23 +39,77 @@ class DailyFragment : Fragment() {
     }
 
     private fun initViews(view: View) {
+        goalList = ArrayList()
         recyclerView = view.findViewById(R.id.recyclePlan_id)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        goalAdapter = GoalAdapter()
+        goalAdapter = GoalAdapter(goalList, this)
         recyclerView.adapter = goalAdapter
+
 
         fetchData()
         saveData(view)
-        //deleteData(view)
+
+        ItemTouchHelper(object : ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.RIGHT) {
+            override fun onMove(
+                recyclerView: RecyclerView,
+                viewHolder: RecyclerView.ViewHolder,
+                target: RecyclerView.ViewHolder
+            ): Boolean {
+                // this method is called
+                // when the item is moved.
+                return false
+            }
+
+            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+                // this method is called when we swipe our item to right direction.
+                // on below line we are getting the item at a particular position.
+                val deletedGoal: GoalData =
+                    goalList[viewHolder.adapterPosition]
+
+                // below line is to get the position
+                // of the item at that position.
+                val position = viewHolder.adapterPosition
+
+                // this method is called when item is swiped.
+                // below line is to remove item from our array list.
+                goalList.removeAt(viewHolder.adapterPosition)
+                val goalData = GoalData()
+                goalData.id?.let { it1 ->
+                    AppDatabase.getInstance(requireContext())?.goalDao()?.delete(
+                        it1
+                    )
+                }
+
+
+                // below line is to notify our item is removed from adapter.
+                goalAdapter.notifyItemRemoved(viewHolder.adapterPosition)
+
+                // below line is to display our snackbar with action.
+                Snackbar.make(
+                    recyclerView,
+                    "Deleted " + deletedGoal.goalNames,
+                    Snackbar.LENGTH_LONG
+                )
+                    .setAction(
+                        "Undo",
+                        View.OnClickListener {
+                            // adding on click listener to our action of snack bar.
+                            // below line is to add our item to array list with a position.
+                            goalList.add(position, deletedGoal)
+
+                            // below line is to notify item is
+                            // added to our adapter class.
+                            goalAdapter.notifyItemInserted(position)
+                        }).show()
+            }
+            // at last we are adding this
+            // to our recycler view.
+        }).attachToRecyclerView(recyclerView)
+
         val textNewPlan = view.findViewById<LinearLayout>(R.id.newPlanLinear_id)
         textNewPlan.setOnClickListener {
             showBottomSheet()
         }
-    }
-
-    private fun refreshData(data: ArrayList<GoalData>) {
-        goalAdapter = GoalAdapter()
-        recyclerView.adapter = goalAdapter
     }
 
     private fun showBottomSheet() {
@@ -95,15 +151,4 @@ class DailyFragment : Fragment() {
     }
 
 
-    private fun deleteData(view: View) {
-        val goalData = GoalData()
-        deleteIcon = view.findViewById(R.id.deleteIcon_id)
-        deleteIcon.setOnClickListener {
-            goalData.id?.let { it1 ->
-                AppDatabase.getInstance(requireContext())?.goalDao()?.delete(
-                    it1
-                )
-            }
-        }
-    }
 }

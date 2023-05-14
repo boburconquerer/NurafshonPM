@@ -6,27 +6,27 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.nurafshonpm.Activities.activities.activity.profile.TMfragments.DailyFragment
 import com.example.nurafshonpm.Activities.activities.localDatabase.localDataGoal.GoalData
 import com.example.nurafshonpm.R
 
-class GoalAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class GoalAdapter(
+    private val goalLists: ArrayList<GoalData>, private val context: DailyFragment
+) : RecyclerView.Adapter<GoalAdapter.GoalsViewHolder>() {
 
-    private val goalLists = ArrayList<GoalData>()
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GoalsViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.goal_layout, parent, false)
         return GoalsViewHolder(view)
     }
 
-    override fun getItemCount(): Int {
-        return goalLists.size
+    override fun onBindViewHolder(holder: GoalsViewHolder, position: Int) {
+        holder.goalText.text = goalLists[position].goalNames
+
     }
 
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        val model: GoalData = goalLists[position]
-        if (holder is GoalsViewHolder) {
-            holder.goal.text = model.goalNames
-        }
+    override fun getItemCount(): Int {
+        return goalLists.size
     }
 
     @SuppressLint("NotifyDataSetChanged")
@@ -36,6 +36,6 @@ class GoalAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     }
 
     inner class GoalsViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        var goal: TextView = view.findViewById(R.id.goalText_id)
+        val goalText: TextView = view.findViewById(R.id.goalText_id)
     }
 }
