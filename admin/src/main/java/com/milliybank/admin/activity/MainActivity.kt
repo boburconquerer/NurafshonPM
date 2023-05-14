@@ -6,6 +6,8 @@ import android.view.MenuItem
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.milliybank.admin.Admin
+import com.milliybank.admin.Director
 import com.milliybank.admin.R
 import com.milliybank.admin.educatorPage.fragment.EducatorAdminFragment
 import com.milliybank.admin.homePage.adapter.FragmentAdapter
@@ -30,7 +32,9 @@ class MainActivity : AppCompatActivity() {
     private fun fragmentData(): ArrayList<Fragment> {
         return arrayListOf(
             HomeAdminFragment(),
-            EducatorAdminFragment()
+            Director(),
+            EducatorAdminFragment(),
+            Admin()
         )
     }
 
@@ -45,8 +49,14 @@ class MainActivity : AppCompatActivity() {
                 R.id.menu_homeFragment_id-> {
                     viewHomeActivity.currentItem= 0
                 }
-                R.id.menu_educatorsFragment_id -> {
+                R.id.menu_directorFragment_id-> {
                     viewHomeActivity.currentItem= 1
+                }
+                R.id.menu_educatorsFragment_id -> {
+                    viewHomeActivity.currentItem= 2
+                }
+                R.id.menu_adminFragment_id-> {
+                    viewHomeActivity.currentItem= 3
                 }
 
             }
