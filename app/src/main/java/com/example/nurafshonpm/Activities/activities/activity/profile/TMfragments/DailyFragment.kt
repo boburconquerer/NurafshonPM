@@ -19,7 +19,6 @@ import com.example.nurafshonpm.Activities.activities.localDatabase.localDataGoal
 import com.example.nurafshonpm.Activities.activities.localDatabase.localDataGoal.PlanDatabase
 import com.example.nurafshonpm.R
 import com.google.android.material.bottomsheet.BottomSheetDialog
-import com.google.android.material.imageview.ShapeableImageView
 import com.google.android.material.snackbar.Snackbar
 
 
@@ -55,36 +54,19 @@ class DailyFragment : Fragment() {
                 viewHolder: RecyclerView.ViewHolder,
                 target: RecyclerView.ViewHolder
             ): Boolean {
-                // this method is called
-                // when the item is moved.
                 return false
             }
 
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
-                // this method is called when we swipe our item to right direction.
-                // on below line we are getting the item at a particular position.
-                val deletedGoal: GoalData =
-                    goalList[viewHolder.adapterPosition]
-
-                // below line is to get the position
-                // of the item at that position.
+                val deletedGoal: GoalData = goalList[viewHolder.adapterPosition]
                 val position = viewHolder.adapterPosition
-
-                // this method is called when item is swiped.
-                // below line is to remove item from our array list.
                 goalList.removeAt(viewHolder.adapterPosition)
-                val goalData = GoalData()
-                goalData.id?.let { it1 ->
-                    AppDatabase.getInstance(requireContext())?.goalDao()?.delete(
-                        it1
-                    )
+                deletedGoal.id?.let { delete ->
+                    AppDatabase.getInstance(requireContext())?.goalDao()?.delete(delete)
                 }
 
 
-                // below line is to notify our item is removed from adapter.
                 goalAdapter.notifyItemRemoved(viewHolder.adapterPosition)
-
-                // below line is to display our snackbar with action.
                 Snackbar.make(
                     recyclerView,
                     "Deleted " + deletedGoal.goalNames,
