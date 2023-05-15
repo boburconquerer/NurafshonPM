@@ -51,9 +51,13 @@ class HomeAdminFragment : Fragment() {
           val title = newTitle.text.toString().trim()
           val description = newTitleDesc.text.toString().trim()
             val data = PostData(title,description)
-            RetrofitHttp.retrofitService().postAnnouncement(data)
+            //postDataOfList()
         }
 
+    }
+
+    private fun postDataOfList(view:View, postData: PostData){
+        //RetrofitHttp.retrofitService().postAnnouncement(data)
     }
     private fun getDataOfList(view: View){
         val progressBar = view.findViewById<ProgressBar>(R.id.progressBar_id)
