@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.ProgressBar
+import android.widget.Toast
 import androidx.appcompat.widget.AppCompatButton
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -87,15 +88,14 @@ class HomeAdminFragment : Fragment() {
                     for (index in data!!.reversed()){
                         list.add(index)
                     }
-                    //refreshData(response.body()!!)
                     refreshData(list)
                 }
-                Log.d("@@@s", response.body().toString())
+
             }
 
             override fun onFailure(call: Call<AdminHome>, t: Throwable) {
                 progressBar.visibility = View.GONE
-                Log.d("@@@e", t.message.toString())
+                Toast.makeText(requireContext(), "No internet connection", Toast.LENGTH_SHORT).show()
             }
         })
     }

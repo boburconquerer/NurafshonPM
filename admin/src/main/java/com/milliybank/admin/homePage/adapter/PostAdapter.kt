@@ -31,7 +31,7 @@ class PostAdapter(var postList: ArrayList<AdminHomeItem>) :
 
     inner class OnPostViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val newTitle: TextView = view.findViewById(R.id.newItemTitle_id)
-        val newDesc:TextView = view.findViewById(R.id.newTitleDesc_id)
+        val newDesc:TextView = view.findViewById(R.id.newTitleDescs_id)
         val dateAdministration:TextView = view.findViewById(R.id.dateAdministration)
     }
 }
