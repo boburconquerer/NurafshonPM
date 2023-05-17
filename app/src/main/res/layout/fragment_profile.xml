@@ -17,7 +17,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
             android:orientation="vertical">
 
 
@@ -28,7 +27,7 @@
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="40dp"
                 android:adjustViewBounds="true"
                 android:scaleType="centerCrop"
                 android:src="@drawable/logo"
@@ -88,34 +87,7 @@
                 </LinearLayout>
 
 
-                <LinearLayout
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:background="@drawable/shape"
-                    android:gravity="center"
-                    android:layout_marginTop="10dp"
-                    android:id="@+id/timeManagement"
-                    android:orientation="vertical">
-                    <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:adjustViewBounds="true"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/baseline_view_timeline_24"
-                        />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textStyle="bold"
-                        android:textSize="12sp"
-                        android:text="Manage"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textStyle="bold"
-                        android:textSize="12sp"
-                        android:text="Time "/>
-                </LinearLayout>
+
             </LinearLayout>
 
 
@@ -235,7 +207,43 @@
                                     android:layout_gravity="center"
                                     android:layout_marginStart="20dp"
                                     android:layout_weight="1"
-                                    android:text="Teacher"
+                                    android:text="Employees"
+                                    android:textColor="#3F51B5"
+                                    android:textSize="15dp"
+                                    android:textStyle="bold" />
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:src="@drawable/baseline_chevron_right_24" />
+                            </LinearLayout>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="30dp"
+                                android:layout_marginTop="20dp"
+                                android:text="Time Management"
+                                android:textColor="#757272"
+                                android:textSize="18dp"
+                                android:textStyle="bold" />
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginTop="10dp"
+                                android:id="@+id/timeManagement"
+                                android:layout_marginEnd="20dp"
+                                android:background="@drawable/corner2"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_weight="1"
+                                    android:text="Manage Your Time"
                                     android:textColor="#3F51B5"
                                     android:textSize="15dp"
                                     android:textStyle="bold" />

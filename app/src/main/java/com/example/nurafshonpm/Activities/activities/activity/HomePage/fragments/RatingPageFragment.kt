@@ -36,17 +36,25 @@ class RatingPageFragment : Fragment() {
     private fun initViews(view: View) {
         recyclerView = view.findViewById(R.id.recyclerViewRating)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        apiList(view)
+
+        refreshData(data())
 
     }
 
+    private fun data(): ArrayList<ModelRating> {
+        val list = ArrayList<ModelRating>()
+        for (i in 1..20){
+            list.add(ModelRating("Alisher Daminov","5","good teacher, instructs students to junior stage in app development.good teacher, instructs students to junior stage in app development.good teacher, instructs students to junior stage in app development.good teacher, instructs students to junior stage in app development.good teacher, instructs students to junior stage in app development."))
+        }
+        return list
+    }
 
     private fun refreshData(data: ArrayList<RatingDataItem>) {
         val adapter = RatingAdapter(data)
         recyclerView.adapter = adapter
 
     }
-    private fun apiList(view: View){
+    private fun apiList(){
         val progressBar = view.findViewById<ProgressBar>(R.id.progressBar_id)
         progressBar.visibility = View.VISIBLE
 
@@ -63,9 +71,9 @@ class RatingPageFragment : Fragment() {
             }
 
             override fun onFailure(call: Call<RatingData>, t: Throwable) {
-
+                TODO("Not yet implemented")
             }
-        })
+        }
     }
 
 }

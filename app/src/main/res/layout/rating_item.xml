@@ -4,6 +4,22 @@
     android:layout_height="wrap_content"
     android:background="#F6F6F6"
     android:orientation="vertical">
+    <LinearLayout
+        android:background="@drawable/edges"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/dateOfRating"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:textColor="#1E1E1E"
+            android:textSize="18dp" />
+
+    </LinearLayout>
 
     <LinearLayout
         android:background="@drawable/edges"
@@ -41,7 +57,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Teacher:"
+                android:text="Employee:"
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -51,7 +67,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:text="Alisher Daminov"
                 android:textColor="@color/black"
                 android:textSize="18sp" />
         </LinearLayout>
@@ -78,7 +93,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:text="5"
                 android:textColor="@color/black"
                 android:textSize="18sp" />
 
