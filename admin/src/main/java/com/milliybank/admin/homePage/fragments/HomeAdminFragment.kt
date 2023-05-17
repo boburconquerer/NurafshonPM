@@ -42,24 +42,40 @@ class HomeAdminFragment : Fragment() {
         getDataOfList(view)
     }
     private fun dataOfPost(view: View){
-        val newTitle = view.findViewById<EditText>(R.id.newTitle_id)
-        val newTitleDesc = view.findViewById<EditText>(R.id.newTitleDesc_id)
         val postAnnounceButton = view.findViewById<AppCompatButton>(R.id.postAnnounceButton_id)
-
         postAnnounceButton.setOnClickListener {
-
-          val title = newTitle.text.toString().trim()
-          val description = newTitleDesc.text.toString().trim()
-            val data = PostData(title,description)
-            //postDataOfList()
+            postDataOfList(view)
         }
 
     }
 
-    private fun postDataOfList(view:View, postData: PostData){
-        //RetrofitHttp.retrofitService().postAnnouncement(data)
+    private fun postDataOfList(view:View){
+        val progressBar = view.findViewById<ProgressBar>(R.id.progressBar_id)
+        progressBar.visibility = View.VISIBLE
+
+        val newTitle = view.findViewById<EditText>(R.id.newTitle_id)
+        val newTitleDesc = view.findViewById<EditText>(R.id.newTitleDesc_id)
+
+        val title = newTitle.text.toString().trim()
+        val description = newTitleDesc.text.toString().trim()
+
+        val data = PostData(title,description)
+
+        RetrofitHttp.retrofitService().postAnnouncement(data).enqueue(object :Callback<AdminHomeItem>{
+            override fun onResponse(call: Call<AdminHomeItem>, response: Response<AdminHomeItem>) {
+                progressBar.visibility = View.GONE
+                Log.d("@@@s", response.body().toString())
+            }
+
+            override fun onFailure(call: Call<AdminHomeItem>, t: Throwable) {
+                progressBar.visibility = View.GONE
+                Log.d("@@@e",t.message.toString())
+            }
+
+        })
     }
     private fun getDataOfList(view: View){
+        val list = ArrayList<AdminHomeItem>()
         val progressBar = view.findViewById<ProgressBar>(R.id.progressBar_id)
         progressBar.visibility = View.VISIBLE
         RetrofitHttp.retrofitService().getAnnouncement().enqueue(object :Callback<AdminHome>{
@@ -67,7 +83,12 @@ class HomeAdminFragment : Fragment() {
                 progressBar.visibility = View.GONE
 
                 if (response.isSuccessful){
-                    refreshData(response.body()!!)
+                    val data = response.body()
+                    for (index in data!!.reversed()){
+                        list.add(index)
+                    }
+                    //refreshData(response.body()!!)
+                    refreshData(list)
                 }
                 Log.d("@@@s", response.body().toString())
             }
