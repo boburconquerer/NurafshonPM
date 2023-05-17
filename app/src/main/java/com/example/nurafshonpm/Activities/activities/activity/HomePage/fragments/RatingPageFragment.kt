@@ -75,5 +75,5 @@ class RatingPageFragment : Fragment() {
             }
         })
     }
-
+//Hello
 }

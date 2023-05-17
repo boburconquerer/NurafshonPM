@@ -127,6 +127,7 @@ private fun bottomSheetRating(view: View) {
 //                    Log.d("Failure" , t.message.toString())}
 //            })
 //    }
+    //Hello
     val submit = bottomSheet.findViewById<AppCompatButton>(R.id.submitRating)
     submit?.setOnClickListener {
 
