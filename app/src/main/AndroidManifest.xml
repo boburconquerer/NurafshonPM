@@ -22,6 +22,33 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         <activity
             android:name=".Activities.activities.login.SplashActivity"
             android:exported="true">

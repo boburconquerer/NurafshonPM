@@ -27,7 +27,6 @@ class RatingPageFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_rating, container, false)
         initViews(view)
         return view
@@ -37,43 +36,44 @@ class RatingPageFragment : Fragment() {
         recyclerView = view.findViewById(R.id.recyclerViewRating)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
-        refreshData(data())
+        apiList(view)
 
     }
 
-    private fun data(): ArrayList<ModelRating> {
-        val list = ArrayList<ModelRating>()
-        for (i in 1..20){
-            list.add(ModelRating("Alisher Daminov","5","good teacher, instructs students to junior stage in app development.good teacher, instructs students to junior stage in app development.good teacher, instructs students to junior stage in app development.good teacher, instructs students to junior stage in app development.good teacher, instructs students to junior stage in app development."))
-        }
-        return list
-    }
+
 
     private fun refreshData(data: ArrayList<RatingDataItem>) {
         val adapter = RatingAdapter(data)
         recyclerView.adapter = adapter
 
     }
-    private fun apiList(){
+    private fun apiList(view: View){
         val progressBar = view.findViewById<ProgressBar>(R.id.progressBar_id)
         progressBar.visibility = View.VISIBLE
 
-
-        RetrofitHTTP.retrofitService().ratingList().enqueue(object:Callback<RatingData>{
+        val list = ArrayList<RatingDataItem>()
+        RetrofitHTTP.retrofitService().ratingList().enqueue(object:Callback<RatingData> {
 
             override fun onResponse(call: Call<RatingData>, response: Response<RatingData>) {
                 progressBar.visibility = View.GONE
-                Log.d("Hello" , response.body().toString())
-                if(response.isSuccessful){
-                    refreshData(response.body()!!)
+                Log.d("Succes!", response.body().toString())
+                if (response.isSuccessful) {
+                    val data = response.body()
+                    for (index in data!!.reversed()){
+                        list.add(index)
+                    }
+                  //  refreshData(response.body()!!)
+                    refreshData(list)
 
                 }
             }
 
             override fun onFailure(call: Call<RatingData>, t: Throwable) {
-                TODO("Not yet implemented")
+                Log.d("Error", t.message.toString())
+                progressBar.visibility = View.GONE
+
             }
-        }
+        })
     }
 
 }
