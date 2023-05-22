@@ -12,7 +12,6 @@ object RetrofitHttp {
             .baseUrl("https://nurafshon-pm.up.railway.app/api/")
             .build()
     }
-
     fun retrofitService(): RetrofitService {
         return getRetrofit().create(RetrofitService::class.java)
     }

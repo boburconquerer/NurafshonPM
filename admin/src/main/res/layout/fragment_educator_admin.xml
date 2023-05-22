@@ -11,6 +11,11 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -48,6 +53,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
                     android:hint="02.02.2023"
+                    android:textColor="#1E1E1E"
                     android:textColorHint="#cbcbcb"
                     android:textSize="18sp" />
 
@@ -226,14 +232,29 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycleHobbies_id"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="6dp"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-
-            </androidx.recyclerview.widget.RecyclerView>
+                android:layout_height="match_parent"/>
         </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <ProgressBar
+                    android:id="@+id/progress_educator"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:indeterminate="true"
+                    android:indeterminateTint="#2685CD"
+                    android:layout_gravity="center"
+                    android:visibility="gone"
+                    />
+
+            </LinearLayout>
+
+        </FrameLayout>
     </androidx.core.widget.NestedScrollView>
 
 
