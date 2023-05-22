@@ -27,7 +27,6 @@ class RatingPageFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_rating, container, false)
         initViews(view)
         return view
@@ -36,17 +35,7 @@ class RatingPageFragment : Fragment() {
     private fun initViews(view: View) {
         recyclerView = view.findViewById(R.id.recyclerViewRating)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
-
-        refreshData(data())
-
-    }
-
-    private fun data(): ArrayList<ModelRating> {
-        val list = ArrayList<ModelRating>()
-        for (i in 1..20){
-            list.add(ModelRating("Alisher Daminov","5","good teacher, instructs students to junior stage in app development.good teacher, instructs students to junior stage in app development.good teacher, instructs students to junior stage in app development.good teacher, instructs students to junior stage in app development.good teacher, instructs students to junior stage in app development."))
-        }
-        return list
+        apiList(view)
     }
 
     private fun refreshData(data: ArrayList<RatingDataItem>) {
@@ -54,13 +43,12 @@ class RatingPageFragment : Fragment() {
         recyclerView.adapter = adapter
 
     }
-    private fun apiList(){
+    private fun apiList(view: View){
         val progressBar = view.findViewById<ProgressBar>(R.id.progressBar_id)
         progressBar.visibility = View.VISIBLE
 
 
         RetrofitHTTP.retrofitService().ratingList().enqueue(object:Callback<RatingData>{
-
             override fun onResponse(call: Call<RatingData>, response: Response<RatingData>) {
                 progressBar.visibility = View.GONE
                 Log.d("Hello" , response.body().toString())
@@ -71,9 +59,9 @@ class RatingPageFragment : Fragment() {
             }
 
             override fun onFailure(call: Call<RatingData>, t: Throwable) {
-                TODO("Not yet implemented")
+                Log.d("er" , t.message.toString())
             }
-        }
+        })
     }
 //Hello
 }

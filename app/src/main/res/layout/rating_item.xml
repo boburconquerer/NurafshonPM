@@ -8,23 +8,6 @@
         android:background="@drawable/edges"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="10dp"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/dateOfRating"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_margin="10dp"
-            android:textColor="#1E1E1E"
-            android:textSize="18dp" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:background="@drawable/edges"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
         android:layout_margin="5dp"
         android:orientation="vertical">
 
@@ -33,11 +16,11 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_margin="10dp"
-            android:text="02.02.2023"
             android:textColor="#1E1E1E"
             android:textSize="18dp" />
 
     </LinearLayout>
+
 
     <LinearLayout
 
