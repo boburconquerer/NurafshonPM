@@ -3,8 +3,6 @@ package com.example.nurafshonpm.Activities.activities.networks
 import com.example.nurafshonpm.Activities.activities.fragments.model.RatingData
 import com.example.nurafshonpm.Activities.activities.fragments.postModel.RatingRequest
 import com.example.nurafshonpm.Activities.activities.fragments.postModel.RatingResponse
-import com.example.nurafshonpm.Activities.activities.login.model.SignUpRequest
-import com.example.nurafshonpm.Activities.activities.login.model.SignUpResponse
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.GET

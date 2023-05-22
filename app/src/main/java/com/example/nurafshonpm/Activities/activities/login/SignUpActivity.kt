@@ -10,6 +10,8 @@ import android.widget.Toast
 import androidx.appcompat.widget.AppCompatButton
 import com.example.nurafshonpm.Activities.SignInActivity
 import com.example.nurafshonpm.Activities.activities.activity.MainActivity
+import com.example.nurafshonpm.Activities.activities.login.model.SignInRequest
+import com.example.nurafshonpm.Activities.activities.login.model.SignInResponse
 import com.example.nurafshonpm.Activities.activities.login.model.SignUpRequest
 import com.example.nurafshonpm.Activities.activities.login.model.SignUpResponse
 import com.example.nurafshonpm.Activities.activities.login.network.RetrofitHTTPData
@@ -72,13 +74,15 @@ class SignUpActivity : AppCompatActivity() {
                     val intent = Intent(this@SignUpActivity,MainActivity::class.java)
                     startActivity(intent)
 
+                    Toast.makeText(
+                        this@SignUpActivity,
+                        "Welcome to Nurafshon PM",
+                        Toast.LENGTH_SHORT
+                    ).show()
+
                 }
 
-                Toast.makeText(
-                    this@SignUpActivity,
-                    "Welcome to Nurafshon PM",
-                    Toast.LENGTH_SHORT
-                ).show()
+
 
 
             }

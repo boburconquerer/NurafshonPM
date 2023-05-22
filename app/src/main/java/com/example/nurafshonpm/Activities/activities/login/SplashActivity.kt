@@ -26,8 +26,9 @@ class SplashActivity : AppCompatActivity() {
             }
 
             override fun onFinish() {
+
                 val sharedPrefsManager = SharedPrefsManager(this@SplashActivity)
-                if (sharedPrefsManager.fetchAuthToken() != null) {
+                if (sharedPrefsManager.fetchAuthToken() != null ) {
 
                     val intent = Intent(this@SplashActivity, MainActivity::class.java)
                     startActivity(intent)
