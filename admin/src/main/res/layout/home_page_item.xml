@@ -33,11 +33,11 @@
         android:orientation="vertical">
 
         <ImageView
-            android:padding="10dp"
             android:id="@+id/imageAdministration"
             android:layout_width="match_parent"
             android:layout_height="230dp"
             android:adjustViewBounds="true"
+            android:padding="10dp"
             android:src="@drawable/logo" />
 
         <TextView

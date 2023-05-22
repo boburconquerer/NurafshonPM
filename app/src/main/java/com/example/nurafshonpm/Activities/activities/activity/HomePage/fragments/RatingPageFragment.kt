@@ -51,7 +51,7 @@ class RatingPageFragment : Fragment() {
         RetrofitHTTP.retrofitService().ratingList().enqueue(object:Callback<RatingData>{
             override fun onResponse(call: Call<RatingData>, response: Response<RatingData>) {
                 progressBar.visibility = View.GONE
-                Log.d("Hello" , response.body().toString())
+                Log.d("suc" , response.body().toString())
                 if(response.isSuccessful){
                     refreshData(response.body()!!)
 

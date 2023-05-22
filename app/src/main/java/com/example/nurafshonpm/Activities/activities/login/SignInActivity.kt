@@ -9,7 +9,6 @@ import com.example.nurafshonpm.Activities.activities.activity.MainActivity
 import com.example.nurafshonpm.Activities.activities.login.SignUpActivity
 import com.example.nurafshonpm.R
 
-//Edit by Paxriddinov
 class SignInActivity : AppCompatActivity() {
     private lateinit var signInButton: AppCompatButton
     lateinit var signUpFromHere: TextView
