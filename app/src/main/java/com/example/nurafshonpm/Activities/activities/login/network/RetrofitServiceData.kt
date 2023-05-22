@@ -18,4 +18,6 @@ interface RetrofitServiceData {
 
     @POST("signup")
     fun signUpPost(@Body signUpRequest: SignUpRequest): Call<SignUpResponse>
+
+    
 }
