@@ -1,5 +1,6 @@
 package com.example.nurafshonpm.Activities.activities.networks
 
+import com.example.nurafshonpm.Activities.activities.fragments.model.HomeAnnounce
 import com.example.nurafshonpm.Activities.activities.fragments.model.RatingData
 import com.example.nurafshonpm.Activities.activities.fragments.postModel.RatingRequest
 import com.example.nurafshonpm.Activities.activities.fragments.postModel.RatingResponse
@@ -17,6 +18,9 @@ interface RetrofitService {
 
     @GET("rating")
     fun  ratingList():Call<RatingData>
+
+    @GET("announcement")
+    fun announcementList():Call<HomeAnnounce>
 
     @POST("rating")
     fun ratingPost(@Body ratingRequest: RatingRequest):Call<RatingResponse>

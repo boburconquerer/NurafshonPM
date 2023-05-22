@@ -6,10 +6,11 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.nurafshonpm.Activities.activities.fragments.model.HomeAnnounceItem
 import com.example.nurafshonpm.Activities.activities.modul.ModelHomePage
 import com.example.nurafshonpm.R
 
-class AdapterHomePage(val list: ArrayList<ModelHomePage>): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class AdapterHomePage(val list: ArrayList<HomeAnnounceItem>): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.home_page_item,parent,false)
         return HomePageViewHolder(view)
@@ -20,12 +21,11 @@ class AdapterHomePage(val list: ArrayList<ModelHomePage>): RecyclerView.Adapter<
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        val model: ModelHomePage = list[position]
+        val model: HomeAnnounceItem = list[position]
         if(holder is HomePageViewHolder){
-            holder.image.setImageResource(model.imageAdministration)
-            holder.title.text = model.titleAdministration
-            holder.description.text = model.descriptionsAdministration
-            holder.date.text = model.dateAdministration
+            holder.title.text = model.title
+            holder.description.text = model.description
+            holder.date.text = model.createdAt
         }
     }
 
