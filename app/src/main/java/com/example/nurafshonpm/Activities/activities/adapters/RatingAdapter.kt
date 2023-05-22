@@ -25,7 +25,7 @@ class RatingAdapter(var list: ArrayList<RatingDataItem>): RecyclerView.Adapter<R
             holder.teacherName.text = model.teacher
             holder.teacherRating.text = model.rating.toString()
             holder.teacherDescription.text = model.description
-            holder.dateRating.text = model.createdAt
+            holder.dateOfRating.text = model.createdAt
         }
     }
 
@@ -33,7 +33,6 @@ class RatingAdapter(var list: ArrayList<RatingDataItem>): RecyclerView.Adapter<R
         var teacherName: TextView = view.findViewById(R.id.teacherName)
         var teacherRating: TextView = view.findViewById(R.id.teacherRating)
         var teacherDescription: TextView = view.findViewById(R.id.teacherDescription)
-        var dateRating: TextView = view.findViewById(R.id.dateOfRating)
-
+        var dateOfRating: TextView = view.findViewById(R.id.dateOfRating)
     }
 }

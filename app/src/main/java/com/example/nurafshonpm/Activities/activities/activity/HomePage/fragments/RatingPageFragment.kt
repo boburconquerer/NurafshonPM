@@ -35,12 +35,8 @@ class RatingPageFragment : Fragment() {
     private fun initViews(view: View) {
         recyclerView = view.findViewById(R.id.recyclerViewRating)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
-
         apiList(view)
-
     }
-
-
 
     private fun refreshData(data: ArrayList<RatingDataItem>) {
         val adapter = RatingAdapter(data)
@@ -51,27 +47,19 @@ class RatingPageFragment : Fragment() {
         val progressBar = view.findViewById<ProgressBar>(R.id.progressBar_id)
         progressBar.visibility = View.VISIBLE
 
-        val list = ArrayList<RatingDataItem>()
-        RetrofitHTTP.retrofitService().ratingList().enqueue(object:Callback<RatingData> {
 
+        RetrofitHTTP.retrofitService().ratingList().enqueue(object:Callback<RatingData>{
             override fun onResponse(call: Call<RatingData>, response: Response<RatingData>) {
                 progressBar.visibility = View.GONE
-                Log.d("Succes!", response.body().toString())
-                if (response.isSuccessful) {
-                    val data = response.body()
-                    for (index in data!!.reversed()){
-                        list.add(index)
-                    }
-                  //  refreshData(response.body()!!)
-                    refreshData(list)
+                Log.d("Hello" , response.body().toString())
+                if(response.isSuccessful){
+                    refreshData(response.body()!!)
 
                 }
             }
 
             override fun onFailure(call: Call<RatingData>, t: Throwable) {
-                Log.d("Error", t.message.toString())
-                progressBar.visibility = View.GONE
-
+                Log.d("er" , t.message.toString())
             }
         })
     }
