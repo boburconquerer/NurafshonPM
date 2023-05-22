@@ -19,4 +19,6 @@ interface RetrofitService {
     fun getAnnouncement():Call<AdminHome>
 
 
+    //hehehehe
+
 }
