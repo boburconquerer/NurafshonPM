@@ -13,8 +13,6 @@ import com.example.nurafshonpm.Activities.activities.activity.MainActivity
 import com.example.nurafshonpm.Activities.activities.login.SignUpActivity
 import com.example.nurafshonpm.Activities.activities.login.model.SignInRequest
 import com.example.nurafshonpm.Activities.activities.login.model.SignInResponse
-import com.example.nurafshonpm.Activities.activities.login.model.SignUpRequest
-import com.example.nurafshonpm.Activities.activities.login.model.SignUpResponse
 import com.example.nurafshonpm.Activities.activities.login.network.RetrofitHTTPData
 import com.example.nurafshonpm.Activities.activities.login.sharedData.SharedPrefsManager
 import com.example.nurafshonpm.R

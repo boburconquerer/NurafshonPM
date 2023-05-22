@@ -38,7 +38,7 @@
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
             android:scaleType="centerCrop"
-            android:src="@drawable/image" />
+            android:src="@drawable/pmschool" />
 
         <TextView
             android:id="@+id/titleAdministration"
