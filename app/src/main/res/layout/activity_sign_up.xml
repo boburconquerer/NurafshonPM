@@ -39,7 +39,7 @@
                 android:orientation="vertical">
 
                 <EditText
-                    android:id="@+id/SignUpUserName"
+                    android:id="@+id/signUpUserName"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginTop="20dp"
@@ -52,7 +52,7 @@
                     android:textColor="#787878"/>
 
                 <EditText
-                    android:id="@+id/SignUpEmail"
+                    android:id="@+id/signUpEmail"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginTop="20dp"
@@ -65,7 +65,7 @@
                     android:textColor="#787878"/>
 
                 <EditText
-                    android:id="@+id/SignUpPassword"
+                    android:id="@+id/signUpPassword"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginTop="20dp"
@@ -139,6 +139,7 @@
             android:gravity="center">
 
             <ProgressBar
+                android:id="@+id/progress_sign_up"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:indeterminate="true"
@@ -148,6 +149,7 @@
                 />
 
         </LinearLayout>
+
     </FrameLayout>
 
 </LinearLayout>

@@ -39,13 +39,13 @@
                 android:orientation="vertical">
 
                 <EditText
-                    android:id="@+id/userName"
+                    android:id="@+id/email"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginTop="20dp"
                     android:background="@drawable/rounded1"
                     android:drawableStart="@drawable/baseline_person_24"
-                    android:hint="Full name"
+                    android:hint="Email"
                     android:paddingStart="10dp"
                     android:textColorHint="#A6A4A4"
                     android:textColor="#787878"
@@ -110,6 +110,7 @@
             android:gravity="center">
 
             <ProgressBar
+                android:id="@+id/progress_sign_in"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:indeterminate="true"

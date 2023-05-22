@@ -14,6 +14,7 @@ interface RetrofitService {
 
     @Headers("Content-type:application/json")
 
+
     @GET("rating")
     fun  ratingList():Call<RatingData>
 
