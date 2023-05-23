@@ -46,7 +46,7 @@
                     android:padding="10dp">
 
                     <EditText
-                        android:id="@+id/newTitleDesc_id"
+                        android:id="@+id/newDesc_id"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:autofillHints="name"

@@ -107,7 +107,7 @@ private fun bottomSheetRating(view: View) {
         val getRating = rating!!.text.toString().trim()
 
 
-        val ratingRequest = RatingRequest(getName, getRating, getDescription)
+        val ratingRequest = RatingRequest(getName, getDescription,getRating,)
 
         val progressBar = bottomSheet.findViewById<ProgressBar>(R.id.progressBareee)
         progressBar!!.visibility = View.VISIBLE
@@ -118,7 +118,8 @@ private fun bottomSheetRating(view: View) {
 
                     if (response.isSuccessful) {
                         Log.d("Success", response.body().toString())
-
+                        val intent = Intent(requireContext(),RatingPageFragment::class.java)
+                        startActivity(intent)
                 }
                 }
 
