@@ -76,4 +76,5 @@ dependencies {
     //OkHttp Libraries
     implementation 'com.squareup.okhttp3:okhttp:5.0.0-alpha.1'
     implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.1'
+    debugImplementation "com.github.chuckerteam.chucker:library:3.5.2"
 }

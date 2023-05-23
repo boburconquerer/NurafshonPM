@@ -26,7 +26,6 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_home, container, false)
 
         initViews(view)
@@ -39,22 +38,6 @@ class HomeFragment : Fragment() {
 
         apiList(view)
     }
-
-   /* private fun data(): ArrayList<ModelHomePage> {
-        val list = ArrayList<ModelHomePage>()
-        for (i in 1..20) {
-
-            list.add(
-                ModelHomePage(
-                    R.drawable.image,
-                    "16.02.2023",
-                    "The start of the exams",
-                    "top 3 national universities starting their exams on august! To pass you need to be genius...top 3 national universities starting their exams on august! To pass you need to be genius To pass you need to be genius...top 3 national universities starting their exams on august! To pass you need to be genius..."
-                )
-            )
-        }
-        return list
-    }*/
 
     private fun refreshData(data: ArrayList<HomeAnnounceItem>) {
         val adapter = AdapterHomePage(data)

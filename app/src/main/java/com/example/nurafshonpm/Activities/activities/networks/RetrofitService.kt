@@ -11,10 +11,11 @@ import retrofit2.http.Headers
 import retrofit2.http.POST
 
 interface RetrofitService {
-    //Hello
 
     @Headers("Content-type:application/json")
 
+    @POST("rating")
+    fun ratingPost(@Body ratingRequest: RatingRequest):Call<RatingResponse>
 
     @GET("rating")
     fun  ratingList():Call<RatingData>
@@ -22,7 +23,5 @@ interface RetrofitService {
     @GET("announcement")
     fun announcementList():Call<HomeAnnounce>
 
-    @POST("rating")
-    fun ratingPost(@Body ratingRequest: RatingRequest):Call<RatingResponse>
 
 }
