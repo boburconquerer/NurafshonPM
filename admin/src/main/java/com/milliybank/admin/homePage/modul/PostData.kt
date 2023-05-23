@@ -1,19 +1,20 @@
 package com.milliybank.admin.homePage.modul
 
- class PostData{
-    val createdAt: String?=null
-    var description: String?=null
-    var id: Int?=null
-    var title: String?=null
-    val updatedAt: String?=null
+class PostData {
+    var title: String? = null
+    var description: String? = null
+    var id: Int? = null
+    val createdAt: String? = null
+    val updatedAt: String? = null
 
 
-     constructor(description: String?, title: String?) {
-         this.description = description
-         this.title = title
-     }
+    constructor(title: String?, description: String?) {
+        this.title = title
+        this.description = description
 
-     constructor(id: Int?) {
-         this.id = id
-     }
- }
+    }
+
+    constructor(id: Int?) {
+        this.id = id
+    }
+}

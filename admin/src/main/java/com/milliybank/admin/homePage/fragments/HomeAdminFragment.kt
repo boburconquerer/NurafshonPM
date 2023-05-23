@@ -55,7 +55,7 @@ class HomeAdminFragment : Fragment() {
         progressBar.visibility = View.VISIBLE
 
         val newTitle = view.findViewById<EditText>(R.id.newTitle_id)
-        val newTitleDesc = view.findViewById<EditText>(R.id.newTitleDesc_id)
+        val newTitleDesc = view.findViewById<EditText>(R.id.newDesc_id)
 
         val title = newTitle.text.toString().trim()
         val description = newTitleDesc.text.toString().trim()

@@ -47,13 +47,17 @@ class RatingPageFragment : Fragment() {
         val progressBar = view.findViewById<ProgressBar>(R.id.progressBar_id)
         progressBar.visibility = View.VISIBLE
 
-
+        val list = ArrayList<RatingDataItem>()
         RetrofitHTTP.retrofitService().ratingList().enqueue(object:Callback<RatingData>{
             override fun onResponse(call: Call<RatingData>, response: Response<RatingData>) {
                 progressBar.visibility = View.GONE
                 Log.d("suc" , response.body().toString())
                 if(response.isSuccessful){
-                    refreshData(response.body()!!)
+                    val data = response.body()
+                    for (index in data!!.reversed()){
+                        list.add(index)
+                    }
+                    refreshData(list)
 
                 }
             }
