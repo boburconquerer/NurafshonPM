@@ -64,13 +64,17 @@ class HomeFragment : Fragment() {
     private fun apiList(view: View){
         val progressBar:ProgressBar = view.findViewById(R.id.homeProgressBar_id)
         progressBar.visibility = View.VISIBLE
-
+        val list = ArrayList<HomeAnnounceItem>()
         RetrofitHTTP.retrofitService().announcementList().enqueue(object : Callback<HomeAnnounce> {
             override fun onResponse(call: Call<HomeAnnounce>, response: Response<HomeAnnounce>) {
                 progressBar.visibility = View.GONE
                 Log.d("Announce" , response.body().toString())
                 if(response.isSuccessful){
-                    refreshData(response.body()!!)
+                    val data = response.body()
+                    for (index in data!!.reversed()){
+                        list.add(index)
+                    }
+                    refreshData(list)
 
                 }
             }

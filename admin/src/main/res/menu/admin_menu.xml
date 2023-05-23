@@ -6,9 +6,9 @@
         android:icon="@drawable/baseline_home_24"/>
 
     <item
-        android:id="@+id/menu_directorFragment_id"
-        android:title="Director"
-        android:icon="@drawable/baseline_home_24"/>
+        android:id="@+id/menu_adminFragment_id"
+        android:title="Admin"
+        android:icon="@drawable/admin_icon"/>
 
     <item
         android:id="@+id/menu_educatorsFragment_id"
@@ -16,7 +16,7 @@
         android:icon="@drawable/baseline_pending_actions_24"/>
 
     <item
-        android:id="@+id/menu_adminFragment_id"
-        android:title="Admin"
-        android:icon="@drawable/baseline_home_24"/>
+        android:id="@+id/menu_directorFragment_id"
+        android:title="Director"
+        android:icon="@drawable/director_icon"/>
 </menu>
