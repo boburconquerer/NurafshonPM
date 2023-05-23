@@ -6,9 +6,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.milliybank.admin.R
+import com.milliybank.admin.educatorPage.ModelEducator.Model.EducatorResponse
+import com.milliybank.admin.educatorPage.models.EducatorsResponseGetItem
 import com.milliybank.admin.educatorPage.modul.HobbyData
 
-class HobbyAdapter(var hobbyList: ArrayList<HobbyData>) :
+class HobbyAdapter(var hobbyList: ArrayList<EducatorsResponseGetItem>) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.educators_item, parent, false)
@@ -20,14 +22,14 @@ class HobbyAdapter(var hobbyList: ArrayList<HobbyData>) :
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        val model: HobbyData = hobbyList[position]
+        val model: EducatorsResponseGetItem = hobbyList[position]
         if (holder is OnHobbyViewHolder) {
-            holder.startDate.text = model.startDate
-            holder.lessonName.text = model.lessonName
-            holder.teacherName.text = model.teacherName
-            holder.starting.text = model.start
-            holder.ending.text = model.end
-            holder.className.text = model.className
+            holder.startDate.text = model.start_date
+            holder.lessonName.text = model.name
+            holder.teacherName.text = model.teacher
+            holder.starting.text = model.start_time
+            holder.ending.text = model.end_time
+            holder.className.text = model.group
         }
     }
 
