@@ -98,16 +98,16 @@ private fun bottomSheetRating(view: View) {
     val submit = bottomSheet.findViewById<AppCompatButton>(R.id.submitRating)
     submit?.setOnClickListener {
 
-        val employeeName = bottomSheet.findViewById<EditText>(R.id.employee_name)
-        val description = bottomSheet.findViewById<EditText>(R.id.description)
-        val rating = bottomSheet.findViewById<EditText>(R.id.ratingBar)
+        val employeeName = bottomSheet.findViewById<EditText>(R.id.employee_name_ratings)
+        val description = bottomSheet.findViewById<EditText>(R.id.description_ratings)
+        val rating = bottomSheet.findViewById<EditText>(R.id.ratingBar_ratings)
 
-        val name = employeeName!!.text.toString().trim()
+        val getName = employeeName!!.text.toString().trim()
+        val getDescription = description!!.text.toString().trim()
         val getRating = rating!!.text.toString().trim()
-        val descript = description!!.text.toString().trim()
 
 
-        val ratingRequest = RatingRequest(name, getRating, descript)
+        val ratingRequest = RatingRequest(getName, getRating, getDescription)
 
         val progressBar = bottomSheet.findViewById<ProgressBar>(R.id.progressBareee)
         progressBar!!.visibility = View.VISIBLE
@@ -118,9 +118,8 @@ private fun bottomSheetRating(view: View) {
 
                     if (response.isSuccessful) {
                         Log.d("Success", response.body().toString())
-                    } else {
-                        Log.d("Unsuccessful", response.message())
-                    }
+
+                }
                 }
 
                 override fun onFailure(call: Call<RatingResponse>, t: Throwable) {
