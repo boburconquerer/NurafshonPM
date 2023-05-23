@@ -32,9 +32,11 @@ class MainActivity : AppCompatActivity() {
     private fun fragmentData(): ArrayList<Fragment> {
         return arrayListOf(
             HomeAdminFragment(),
-            Director(),
+            Admin(),
             EducatorAdminFragment(),
-            Admin()
+            Director()
+
+
         )
     }
 
@@ -49,13 +51,15 @@ class MainActivity : AppCompatActivity() {
                 R.id.menu_homeFragment_id-> {
                     viewHomeActivity.currentItem= 0
                 }
-                R.id.menu_directorFragment_id-> {
+                R.id.menu_adminFragment_id-> {
                     viewHomeActivity.currentItem= 1
                 }
+
                 R.id.menu_educatorsFragment_id -> {
                     viewHomeActivity.currentItem= 2
                 }
-                R.id.menu_adminFragment_id-> {
+
+                R.id.menu_directorFragment_id-> {
                     viewHomeActivity.currentItem= 3
                 }
 
