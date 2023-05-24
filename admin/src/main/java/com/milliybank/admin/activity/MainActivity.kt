@@ -6,8 +6,8 @@ import android.view.MenuItem
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.milliybank.admin.Admin
-import com.milliybank.admin.Director
+import com.milliybank.admin.adminPage.Admin
+import com.milliybank.admin.directorPage.fragment.Director
 import com.milliybank.admin.R
 import com.milliybank.admin.educatorPage.fragment.EducatorAdminFragment
 import com.milliybank.admin.homePage.adapter.FragmentAdapter

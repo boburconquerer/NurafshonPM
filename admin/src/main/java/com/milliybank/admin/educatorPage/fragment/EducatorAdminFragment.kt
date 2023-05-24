@@ -17,7 +17,6 @@ import com.milliybank.admin.educatorPage.ModelEducator.Model.EducatorResponse
 import com.milliybank.admin.educatorPage.adapter.HobbyAdapter
 import com.milliybank.admin.educatorPage.models.EducatorsResponseGet
 import com.milliybank.admin.educatorPage.models.EducatorsResponseGetItem
-import com.milliybank.admin.educatorPage.modul.HobbyData
 import com.milliybank.admin.network.RetrofitHttp
 import retrofit2.Call
 import retrofit2.Callback

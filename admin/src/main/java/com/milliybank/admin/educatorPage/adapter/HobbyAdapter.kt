@@ -6,9 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.milliybank.admin.R
-import com.milliybank.admin.educatorPage.ModelEducator.Model.EducatorResponse
 import com.milliybank.admin.educatorPage.models.EducatorsResponseGetItem
-import com.milliybank.admin.educatorPage.modul.HobbyData
 
 class HobbyAdapter(var hobbyList: ArrayList<EducatorsResponseGetItem>) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {

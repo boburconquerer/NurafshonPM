@@ -1,5 +1,6 @@
 package com.milliybank.admin.network
 
+import com.milliybank.admin.directorPage.models.DirectorResponse
 import com.milliybank.admin.educatorPage.ModelEducator.Model.EducatorRequest
 import com.milliybank.admin.educatorPage.ModelEducator.Model.EducatorResponse
 import com.milliybank.admin.educatorPage.models.EducatorsResponseGet
@@ -26,5 +27,8 @@ interface RetrofitService {
 
     @GET("announcement")
     fun getAnnouncement(): Call<AdminHome>
+
+    @GET("complaint")
+    fun getComplaint(): Call<DirectorResponse>
 
 }
