@@ -1,5 +1,6 @@
 package com.example.nurafshonpm.Activities.activities.networks
 
+import com.example.nurafshonpm.Activities.activities.activity.HomePage.fragments.Educator.Models.EducatorResponseGet
 import com.example.nurafshonpm.Activities.activities.fragments.model.HomeAnnounce
 import com.example.nurafshonpm.Activities.activities.fragments.model.RatingData
 import com.example.nurafshonpm.Activities.activities.fragments.postModel.RatingRequest
@@ -22,6 +23,9 @@ interface RetrofitService {
 
     @GET("announcement")
     fun announcementList():Call<HomeAnnounce>
+
+    @GET("lesson")
+    fun getEducatorAnnouncement(): Call<EducatorResponseGet>
 
 
 }

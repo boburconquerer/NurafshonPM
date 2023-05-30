@@ -5,11 +5,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.nurafshonpm.Activities.activities.activity.HomePage.fragments.Educator.Models.EducatorResponse
 import com.example.nurafshonpm.Activities.activities.modul.ExtraLessons
 import com.example.nurafshonpm.R
 import java.util.concurrent.TimeoutException
 
-class ExtraLessonsAdapter(var list: ArrayList<ExtraLessons>): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class ExtraLessonsAdapter(var list: ArrayList<EducatorResponse>): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.educators_item,parent,false)
         return extraData(view)
@@ -21,13 +22,13 @@ class ExtraLessonsAdapter(var list: ArrayList<ExtraLessons>): RecyclerView.Adapt
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-       val model: ExtraLessons = list[position]
+       val model: EducatorResponse = list[position]
         if(holder is extraData){
-            holder.extraLessonsDate.text = model.date
-            holder.extraLessonsName.text = model.LessonName
-            holder.extraLessonsTeacher.text = model.lessonTeacher
-            holder.extraLessonsStartTime.text = model.startTime
-            holder.extraLessonsEndTime.text = model.endTime
+            holder.extraLessonsDate.text = model.start_date
+            holder.extraLessonsName.text = model.name
+            holder.extraLessonsTeacher.text = model.teacher
+            holder.extraLessonsStartTime.text = model.start_time
+            holder.extraLessonsEndTime.text = model.end_time
             holder.extraLessonsGroup.text = model.group
         }
     }
