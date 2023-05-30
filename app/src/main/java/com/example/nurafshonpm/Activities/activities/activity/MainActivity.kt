@@ -6,6 +6,7 @@ import android.view.MenuItem
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
 import com.example.nurafshonpm.Activities.activities.activity.HomePage.fragments.*
+import com.example.nurafshonpm.Activities.activities.activity.HomePage.fragments.Educator.EducatorsFragment
 import com.example.nurafshonpm.Activities.activities.fragmentAdapter.FragmentAdapter
 import com.example.nurafshonpm.R
 import com.google.android.material.bottomnavigation.BottomNavigationView

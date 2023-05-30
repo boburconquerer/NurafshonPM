@@ -1,14 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.activities.activity.HomePage.fragments.EducatorsFragment"
-    android:background="@color/white">
+    tools:context=".Activities.activities.activity.HomePage.fragments.Educator.EducatorsFragment"
+    android:background="@color/white"
+    android:orientation="vertical">
 
- <androidx.recyclerview.widget.RecyclerView
+ <FrameLayout
+     android:layout_width="match_parent"
+     android:layout_height="match_parent">
+
+  <androidx.recyclerview.widget.RecyclerView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:id="@+id/EducatorsFragment"/>
+
+ </FrameLayout>
+
+
+ <LinearLayout
      android:layout_width="match_parent"
      android:layout_height="match_parent"
-     android:id="@+id/EducatorsFragment"/>
+     android:gravity="center">
 
-</FrameLayout>
+  <ProgressBar
+      android:id="@+id/progressed_educator"
+      android:layout_width="60dp"
+      android:layout_height="60dp"
+      android:layout_gravity="center"
+      android:indeterminate="true"
+      android:indeterminateTint="#2685CD"
+      android:visibility="gone" />
+
+ </LinearLayout>
+
+</LinearLayout>
