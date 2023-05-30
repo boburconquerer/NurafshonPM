@@ -7,6 +7,7 @@ import com.milliybank.admin.educatorPage.models.EducatorsResponseGet
 import com.milliybank.admin.homePage.modul.AdminHome
 import com.milliybank.admin.homePage.modul.AdminHomeItem
 import com.milliybank.admin.homePage.modul.PostData
+import com.milliybank.admin.homePage.modulMessage.MessageResponse
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.GET
@@ -31,4 +32,6 @@ interface RetrofitService {
     @GET("complaint")
     fun getComplaint(): Call<DirectorResponse>
 
+    @GET("message")
+    fun getMessage(): Call<MessageResponse>
 }
