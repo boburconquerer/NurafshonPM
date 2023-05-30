@@ -19,6 +19,7 @@
             android:layout_gravity="center"
             android:layout_height="wrap_content">
             <ProgressBar
+                android:indeterminateTint="#2685CD"
                 android:layout_width="60dp"
                 android:id="@+id/homeProgressBar_id"
                 android:layout_height="60dp"/>
