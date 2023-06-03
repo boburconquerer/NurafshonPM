@@ -14,6 +14,7 @@ import com.milliybank.admin.homePage.adapter.FragmentAdapter
 import com.milliybank.admin.homePage.fragments.HomeAdminFragment
 
 // hello
+@Suppress("DEPRECATION")
 class MainActivity : AppCompatActivity() {
 
     private lateinit var menuItem: MenuItem
